@@ -1,0 +1,27 @@
+{
+  "name": "twitterdex-2.0",
+  "version": "1.0.0",
+  "description": "A Crowd-Sourced Index of History of Science Twitterstorians",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "history",
+    "of",
+    "science",
+    "twitterdex",
+    "twitter"
+  ],
+  "author": "Ryan Feigenbaum",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {
+    "handlebars": "^4.1.2",
+    "node-fetch": "^2.6.0"
+  }
+}
