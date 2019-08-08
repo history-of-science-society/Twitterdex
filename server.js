@@ -1,24 +1,33 @@
 const fetch = require('node-fetch');
 const fs = require('fs');
+const Handlebars = require('handlebars');
+// const Twit = required('twit');
 
+// const T = new Twit({
+//     consumer_key:
+//     consumer_secret:
+//     access_token:
+//     access_secret_token:
+//     timeout_ms: 60*1000,
+
+// })
+
+// Formstack variables
+// Should omit token before uploading
 const formId = '3315786';
 const oauth_token = 'e05d2249d9d915d9dc9dc1728291b590';
 
 
-// async function getPageNo() {
-//     let response = await fetch(`https://www.formstack.com/api/v2/form/${formId}/submission.json?oauth_token=${oauth_token}`);
-//     let data = await response.json();
-//     return data.pages;
-// }
 
-// function showPageNo() {
-//     getPageNo().then(result => console.log(result));
-// }
+// console.log(src);
 
-// showPageNo();
 
 
 let twitterstorians = [];
+let authors = {
+    authors: ''
+};
+let newObj = {};
 
 async function start() {
 
@@ -35,17 +44,37 @@ async function start() {
         await data.push(res.submissions);
     }
 
-
     // Access each page of data
     for (set in data) {
         // Access individual values
         for (el in data[set]) {
             let obj = new Twitterstorian(data[set][el].data[73000979].value, data[set][el].data[73000996].value, data[set][el].data[73001016].value, data[set][el].data[73001024].value);
+
             await twitterstorians.push(obj);
+            newObj = await {
+                authors: twitterstorians
+            }
+
         }
     }
+    fs.readFile('./src/hbs/index.hbs', function (err, data) {
+        if (!err) {
+            // make the buffer into a string
+            const src = data.toString();
+            const template = Handlebars.compile(src);
+            const html = template(newObj);
+            fs.writeFile('./index.html', html, err => console.log(err));
+            // call the render function
 
-    fs.writeFile('./stream.json', JSON.stringify(twitterstorians), err => console.log(err));
+
+        } else {
+            // handle file read error
+        }
+    });
+
+
+
+
 
 }
 
@@ -56,11 +85,14 @@ function Twitterstorian(name, affiliation, twitter, bio) {
     this.affiliation = affiliation;
     this.twitter = twitter;
     this.bio = bio;
+    this.profile = './img/profile.jpg'
+
 }
+
+
 
 function nameParse(input) {
     let firstName = input.match(/=\s(.+)\n/);
     let lastName = input.match(/last\s=\s(.+)/);
-    console.log(firstName, lastName);
-    return firstName[1].trim().toLowerCase().replace(/\w/, x => x.toUpperCase()) + " " + lastName[1].trim().toLowerCase().replace(/\w/, x => x.toUpperCase());
+    return firstName[1].trim().toLowerCase().replace(/\b(\w)/g, x => x.toUpperCase()) + " " + lastName[1].trim().toLowerCase().replace(/\b(\w)/g, x => x.toUpperCase());
 }
