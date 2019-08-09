@@ -19,24 +19,34 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+    <a class="t-join" href="https://hssonline.formstack.com/forms/twitterdex" target="_blank" rel="noopener">Join the
+        Twitterdex <span class="t-shake">🎉</span></a>
 
     <div class="t-container">
         <header class="t-header">
             <h1>History of Science Society Twitterdex</h1>
-            <p>A Crowd-Sourced Directory of <span id="num"></span> History of Science Twitterstorians</p>
-            <a href="https://hssonline.formstack.com/forms/twitterdex" target="_blank" rel="noopener">Join or Update the
-                Twitterdex</a>
+            <p>A Crowd-Sourced Directory of <span id="num" style="font-weight: 900"></span> History of Science
+                Twitterstorians</p>
+
         </header>
+
+        <section class="t-search">
+            <div class="t-search-container">
+                <p>Search</p>
+                <input type="text" class="t-search-box" placeholder="Begin typing..." autofocus>
+            </div>
+            <button class="t-toggle" id="a-z">Z&nbsp;&ndash;&nbsp;A</button>
+        </section>
 
         <main class="t-main">
 
             {{#each authors}}
-            <article class="t-entry">
+            <article class="t-entry" data-id="{{handle}}">
                 <header class="t-top">
                     <img class="t-image" src="./img/profile.jpg" alt="">
                     <div class="t-body">
                         <h2 class="t-name">{{name}}</h2>
-                        <a class="t-affiliation" href="{{twitter}} target="_blank" rel="noopener">{{handle}}</a>
+                        <a class="t-handle" href="{{twitter}} target=" _blank" rel="noopener">{{handle}}</a>
                     </div>
                 </header>
                 <footer class="t-footer">

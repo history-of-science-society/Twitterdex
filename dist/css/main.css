@@ -2,7 +2,10 @@
   --blue: #455f73;
   --light-blue: #a9c3d7;
   --gray-matter: #f7f7ef;
-  --box-shadow: 4px 8px 25px rgba(0,0,0,0.15), 1px 2px 5px rgba(0,0,0,0.12) ; }
+  --black: #17170c;
+  --manuscript: #ffffd7;
+  --volta: #b2b247;
+  --box-shadow: 4px 8px 25px rgba(0, 0, 0, 0.15), 1px 2px 5px rgba(0, 0, 0, 0.12); }
 
 html {
   background: #eee;
@@ -20,7 +23,8 @@ html {
 .t-container {
   background: #fefefe;
   margin: 0 auto;
-  max-width: 864px; }
+  max-width: 864px;
+  min-height: 100vh; }
 
 .t-header {
   align-items: center;
@@ -46,6 +50,67 @@ html {
     font-weight: 600;
     text-decoration: none; }
 
+.t-search {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+  margin: 2em 0;
+  background: #666633;
+  color: var(--gray-matter); }
+
+.t-search-container {
+  align-items: center;
+  display: flex; }
+
+.t-search-box {
+  border: none;
+  border-bottom: 1px solid var(--volta);
+  color: var(--gray-matter);
+  margin-left: 10px;
+  background: #666633;
+  font-size: 1em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  outline: none; }
+  .t-search-box::placeholder {
+    color: #ddd;
+    text-transform: uppercase;
+    font-size: small; }
+
+.t-join {
+  padding: .5em 2em .5em .75em;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background: #666633;
+  border-radius: 8px;
+  color: var(--gray-matter);
+  text-decoration: none; }
+  .t-join:focus, .t-join:hover {
+    background: #4d4d26; }
+
+.t-toggle {
+  padding: .25em .5em;
+  background: var(--gray-matter);
+  border: none;
+  border-radius: 8px;
+  color: var(--black);
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1em;
+  outline: none; }
+  .t-toggle:focus, .t-toggle:hover {
+    background: var(--volta); }
+
+.t-shake {
+  position: absolute;
+  bottom: .5em;
+  right: .25em;
+  transition: transform .2s ease-in-out; }
+
+.t-join:hover .t-shake {
+  transform: rotate(15deg); }
+
 .t-main {
   display: flex;
   flex-wrap: wrap;
@@ -61,7 +126,8 @@ html {
   width: calc(50% - 40px);
   background: var(--gray-matter);
   border-radius: 8px;
-  box-shadow: var(--box-shadow); }
+  box-shadow: var(--box-shadow);
+  transition: all .2s; }
 
 .t-top {
   align-items: center;
@@ -84,10 +150,12 @@ html {
   font-size: 1.5em;
   line-height: 1.2; }
 
-.t-affiliation {
-  margin-top: 0;
-  color: #000;
+.t-handle {
+  margin-top: .25em;
+  color: var(--black);
   text-decoration: none; }
+  .t-handle:focus, .t-handle:hover {
+    background: var(--manuscript); }
 
 .t-footer {
   bottom: 0;
@@ -95,19 +163,21 @@ html {
   display: flex;
   margin-left: -2em;
   margin-top: auto;
-  width: calc(100% + 4em); }
+  width: calc(100% + 4em);
+  border-top: 1px solid var(--black); }
   .t-footer > * {
     flex: 1;
     text-align: center; }
 
 .t-button {
   padding: .5em;
-  background: var(--light-blue);
+  background: linear-gradient(90deg, #b2b247, #c0c060);
   border: none;
   color: #000;
   cursor: pointer;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: .8em;
+  font-weight: 600;
   text-decoration: none;
   transition: .2s ease-out; }
   .t-button:first-child {
@@ -115,7 +185,19 @@ html {
   .t-button:last-child {
     border-bottom-right-radius: 8px; }
   .t-button:hover, .t-button:focus {
-    background: #3d6583; }
+    background: linear-gradient(90deg, #97973c, #b2b247); }
+  .t-button:nth-child(2) {
+    background: linear-gradient(90deg, #c0c060, #cbcb7c); }
+    .t-button:nth-child(2):hover, .t-button:nth-child(2):focus {
+      background: linear-gradient(90deg, #b2b247, #c0c060); }
+  .t-button:last-child {
+    background: linear-gradient(90deg, #cbcb7c, #d6d698); }
+    .t-button:last-child:hover, .t-button:last-child:focus {
+      background: linear-gradient(90deg, #c0c060, #cbcb7c); }
 
 .t-bio {
+  display: none; }
+
+.t-no-match {
+  opacity: 0;
   display: none; }
