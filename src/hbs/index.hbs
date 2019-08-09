@@ -2,23 +2,61 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        {{#each authors}}<ul><li>{{name}}</li><li>{{bio}}</li><li>{{twitter}}</li><li>{{affiliation}}</li></ul>{{/each}}
+    <div class="t-container">
+        <header class="t-header">
+            <h1>History of Science Society Twitterdex</h1>
+            <p>A Crowd-Sourced Directory of <span id="num"></span> History of Science Twitterstorians</p>
+            <a href="https://hssonline.formstack.com/forms/twitterdex" target="_blank" rel="noopener">Join or Update the
+                Twitterdex</a>
+        </header>
 
-        <script src="" async defer></script>
+        <main class="t-main">
 
-    </body>
+            {{#each authors}}
+            <article class="t-entry">
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">{{name}}</h2>
+                        <a class="t-affiliation" href="{{twitter}} target="_blank" rel="noopener">{{handle}}</a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="{{twitter}}" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p>{{bio}}</p>
+                    <p>{{name}}</p>
+                    <p><em>{{affiliation}}</em></p>
+                </div>
+            </article>
+            {{/each}}
+
+        </main>
+    </div>
+    <script src="./main.js" async defer></script>
+
+</body>
+
 </html>

@@ -51,6 +51,21 @@ async function start() {
             let obj = new Twitterstorian(data[set][el].data[73000979].value, data[set][el].data[73000996].value, data[set][el].data[73001016].value, data[set][el].data[73001024].value);
 
             await twitterstorians.push(obj);
+            await twitterstorians.sort((a, b) => {
+
+
+                let handleA = a.handle.toLowerCase();
+                let handleB = b.handle.toLowerCase();
+
+                if (handleA < handleB) {
+                    return -1;
+                } else if (handleA > handleB) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            })
+
             newObj = await {
                 authors: twitterstorians
             }
@@ -63,7 +78,7 @@ async function start() {
             const src = data.toString();
             const template = Handlebars.compile(src);
             const html = template(newObj);
-            fs.writeFile('./index.html', html, err => console.log(err));
+            fs.writeFile('./dist/index.html', html, err => console.log(err));
             // call the render function
 
 
@@ -85,8 +100,8 @@ function Twitterstorian(name, affiliation, twitter, bio) {
     this.affiliation = affiliation;
     this.twitter = twitter;
     this.bio = bio;
-    this.profile = './img/profile.jpg'
-
+    this.handle = twitterHandle(twitter);
+    this.profile = './img/profile.jpg';
 }
 
 
@@ -94,5 +109,14 @@ function Twitterstorian(name, affiliation, twitter, bio) {
 function nameParse(input) {
     let firstName = input.match(/=\s(.+)\n/);
     let lastName = input.match(/last\s=\s(.+)/);
-    return firstName[1].trim().toLowerCase().replace(/\b(\w)/g, x => x.toUpperCase()) + " " + lastName[1].trim().toLowerCase().replace(/\b(\w)/g, x => x.toUpperCase());
+    return firstName[1].trim().toLowerCase().replace(/(^\w)|\s(\w)|-(\w)/g, x => x.toUpperCase()) + " " + lastName[1].trim().toLowerCase().replace(/(^\w)|\s(\w)|-(\w)/g, x => x.toUpperCase());
+}
+
+function twitterHandle(url) {
+    try {
+        const handle = (/.+\/(.+)/).exec(url);
+        return `@${handle[1]}`
+    } catch (error) {
+        console.error(`${url} is not valid`);
+    }
 }
