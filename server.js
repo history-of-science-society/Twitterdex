@@ -1,6 +1,8 @@
 const fetch = require('node-fetch');
 const fs = require('fs');
 const Handlebars = require('handlebars');
+const dotenv = require('dotenv');
+dotenv.config();
 // const Twit = required('twit');
 
 // const T = new Twit({
@@ -15,7 +17,7 @@ const Handlebars = require('handlebars');
 // Formstack variables
 // Should omit token before uploading
 const formId = '3315786';
-const oauth_token = 'e05d2249d9d915d9dc9dc1728291b590';
+const oauth_token = process.env.API_FS;
 
 
 

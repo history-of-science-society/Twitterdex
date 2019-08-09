@@ -12,16 +12,17 @@
     min-height: 125px;
     // flex: 1;
     // justify-content: center;
-    margin: 15px;
+    margin: 20px;
     position: relative;
     padding: 2em 2em 0;
-    width: calc(50% - 30px);
+    width: calc(50% - 40px);
     // flex: 0 0 1;
 
     // justify-content: center;
     // width: 500px;
     background: var(--gray-matter);
     border-radius: 8px;
+    box-shadow: var(--box-shadow);
     // padding: 25px;
 }
 
@@ -86,10 +87,12 @@
     bottom: 0;
     left: 0;
     display: flex;
+    margin-left: -2em;
     margin-top: auto;
 
     // position: absolute;
-    width: 100%;
+    width: calc(100% + 4em);
+
     >* {
         flex: 1;
         text-align: center;
@@ -97,13 +100,31 @@
 }
 
 .t-button {
-    background: none;
+
+    padding: .5em;
+
+    background: var(--light-blue);
     border: none;
+
     color: #000;
     cursor: pointer;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: .8em;
     text-decoration: none;
+    transition: .2s ease-out;
+
+    &:first-child {
+        border-bottom-left-radius: 8px;
+    }
+
+    &:last-child {
+        border-bottom-right-radius: 8px;
+    }
+
+    &:hover,
+    &:focus {
+        background: scale-color($color:#a9c3d7, $lightness: -50%);
+    }
 }
 
 .t-bio {
