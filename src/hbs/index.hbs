@@ -32,8 +32,7 @@
 
         <section class="t-search">
             <div class="t-search-container">
-                <p>Search</p>
-                <input type="text" class="t-search-box" placeholder="Begin typing..." autofocus>
+                <input type="text" class="t-search-box" placeholder="Begin typing to search" autofocus>
             </div>
             <button class="t-toggle" id="a-z">Z&nbsp;&ndash;&nbsp;A</button>
         </section>
@@ -42,11 +41,15 @@
 
             {{#each authors}}
             <article class="t-entry" data-id="{{handle}}">
+                    <div class="t-circle-set">
+                        <div class="t-circle"></div>
+                        <div class="t-circle"></div>
+                    </div>
                 <header class="t-top">
                     <img class="t-image" src="./img/profile.jpg" alt="">
                     <div class="t-body">
                         <h2 class="t-name">{{name}}</h2>
-                        <a class="t-handle" href="{{twitter}} target=" _blank" rel="noopener">{{handle}}</a>
+                        <a class="t-handle" href="{{twitter}}" rel="noopener">{{handle}}</a>
                     </div>
                 </header>
                 <footer class="t-footer">
@@ -56,9 +59,9 @@
                 </footer>
 
                 <div class="t-bio">
+                    <p class="t-bio-name">{{name}}</p>
                     <p>{{bio}}</p>
-                    <p>{{name}}</p>
-                    <p><em>{{affiliation}}</em></p>
+                    <button class="t-bio-close">X</button>
                 </div>
             </article>
             {{/each}}

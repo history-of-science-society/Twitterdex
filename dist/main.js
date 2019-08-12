@@ -43,7 +43,7 @@ sortButton.addEventListener('click', () => {
         sortButton.innerHTML = 'A&nbsp;&ndash;&nbsp;Z';
         // numTwitter.sort()
 
-        twitterArray.sort( function(a,b) {
+        twitterArray.sort(function (a, b) {
             let twitA = a.dataset.id.toLowerCase();
             let twitB = b.dataset.id.toLowerCase();
 
@@ -63,7 +63,7 @@ sortButton.addEventListener('click', () => {
     } else {
         sortButton.innerHTML = 'Z&nbsp;&ndash;&nbsp;A';
 
-        twitterArray.sort( function(a,b) {
+        twitterArray.sort(function (a, b) {
             let twitA = a.dataset.id.toLowerCase();
             let twitB = b.dataset.id.toLowerCase();
 
@@ -82,3 +82,20 @@ sortButton.addEventListener('click', () => {
     }
 
 })
+
+const aboutButtons = document.querySelectorAll('.t-about');
+const closeBioButtons = document.querySelectorAll('.t-bio-close');
+
+aboutButtons.forEach(el => {
+    el.addEventListener('click', e => {
+        e.target.parentNode.nextSibling.nextSibling.classList.remove('t-card-hide');
+        e.target.parentNode.nextSibling.nextSibling.classList.add('t-card-show');
+    })
+});
+
+closeBioButtons.forEach(el => {
+    el.addEventListener('click', e => {
+        e.target.parentNode.classList.remove('t-card-show');
+        e.target.parentNode.classList.add('t-card-hide');
+    })
+});
