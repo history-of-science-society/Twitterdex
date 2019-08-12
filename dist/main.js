@@ -7,12 +7,16 @@ numSpan.innerText = numTwitter.length;
 
 // Filter DIVS based on text
 const searchBox = document.querySelector('.t-search-box');
+const searchResults = document.getElementById('t-search-results');
 
 searchBox.addEventListener("keyup", () => {
     if (searchBox.value.length > 3) {
         divFilter(searchBox.value);
+        let results = document.querySelectorAll('.t-match').length;
+        searchResults.textContent = `Results: ${results.toString()}`;
     } else {
         numTwitter.forEach(el => el.classList.remove('t-no-match'));
+        searchResults.textContent = '';
     };
 })
 
@@ -21,7 +25,6 @@ function divFilter(input) {
         let userInput = RegExp(input.toLowerCase());
         let src = el.querySelector('.t-name').innerText.toLowerCase();
         let bios = el.querySelector('.t-bio').innerText.toLowerCase();
-        console.log(bios);
         if (userInput.test(src) || userInput.test(bios)) {
             el.classList.add('t-match');
             el.classList.remove('t-no-match');

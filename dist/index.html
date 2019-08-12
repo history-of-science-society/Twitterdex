@@ -32,7 +32,8 @@
 
         <section class="t-search">
             <div class="t-search-container">
-                <input type="text" class="t-search-box" placeholder="Begin typing to search" autofocus>
+                <input type="text" class="t-search-box" placeholder="Begin typing to search by name and bio..." autofocus>
+                <span id="t-search-results"></span>
             </div>
             <button class="t-toggle" id="a-z">Z&nbsp;&ndash;&nbsp;A</button>
         </section>
@@ -62,7 +63,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Abraham Gibson</p>
                     <p>Postdoctoral Fellow in the Center for Biology and Society at Arizona State University</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@AdamDRichter">
@@ -88,7 +89,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Adam Richter</p>
                     <p>Historian of science, especially science and religion. PhD from IHPST, University of Toronto. Doctoral research on John Wallis.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@AdamJMosley">
@@ -114,7 +115,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Adam Mosley</p>
                     <p>Historian of early modern science, especially astronomy, cosmology, cosmography; book history and print culture; instruments; networks.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@Adrianna_Link">
@@ -140,7 +141,33 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Adrianna Link</p>
                     <p>Historian of 20th c. anthropology. Head of Scholarly Programs at the American Philosophical Society. Managing Editor at @histanthro. </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@ahandmer">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Annie Handmer</h2>
+                        <a class="t-handle" href="https://twitter.com/ahandmer"><img src="./img/twitter.svg">
+                            <p>@ahandmer</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/ahandmer" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Annie Handmer</p>
+                    <p>I study international space cooperation, science in extreme locations and strategic space diplomacy. Also space junk! ????????????</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@amboseliacacia">
@@ -166,7 +193,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Amanda Lewis-Nang&#x27;ea</p>
                     <p>Historian of science and environment in Africa. Focused on history of biology and field science in East Africa, history of conservation.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@AndrewRuis">
@@ -192,7 +219,33 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Andrew Ruis</p>
                     <p>A. R. Ruis is a historian of science and medicine who studies the history of food and nutrition in the 19th and 20th centuries.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@annatoledano">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Anna Toledano</h2>
+                        <a class="t-handle" href="https://twitter.com/annatoledano"><img src="./img/twitter.svg">
+                            <p>@annatoledano</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/annatoledano" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Anna Toledano</p>
+                    <p>Anna Toledano is a PhD candidate at Stanford University in history of science. Her dissertation, ?Collecting Empire: The Science and Politics of Natural History Museums in New Spain, 1770?1820,? focuses on natural history collecting in eighteenth-century Spain and Spanish America. She is also a museum professional and developed content for exhibitions and collections at the New York Botanical Garden from 2012 to 2015.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@anne_goldgar">
@@ -218,7 +271,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Anne Goldgar</p>
                     <p>Early modern historian interested in histories of science, art, the book, collecting, the maritime, the Netherlands, the arctic.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@Antony_Adler">
@@ -244,7 +297,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Antony Adler</p>
                     <p>I&#x27;m a Research Associate at Carleton College. I write about the history of marine science, exploration, and the Pacific World.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@aquariumglass">
@@ -270,7 +323,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Samantha Muka</p>
                     <p>Historian and sociologist of marine biology focusing on the history of tank craft.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@ASattelmacher">
@@ -296,10 +349,10 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Anja Sattelmacher</p>
                     <p>I am a historian of science, wandering between the spheres of the history of media and knowledge. Currently interested in cybernetics.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
-            <article class="t-entry" data-id="@aylwardam?s&#x3D;09">
+            <article class="t-entry" data-id="@aylwardam">
                 <div class="t-circle-set">
                     <div class="t-circle"></div>
                     <div class="t-circle"></div>
@@ -308,21 +361,47 @@
                     <img class="t-image" src="./img/profile.jpg" alt="">
                     <div class="t-body">
                         <h2 class="t-name">Alex Aylward</h2>
-                        <a class="t-handle" href="https://twitter.com/aylwardam?s&#x3D;09"><img src="./img/twitter.svg">
-                            <p>@aylwardam?s&#x3D;09</p>
+                        <a class="t-handle" href="https://twitter.com/aylwardam"><img src="./img/twitter.svg">
+                            <p>@aylwardam</p>
                         </a>
                     </div>
                 </header>
                 <footer class="t-footer">
                     <button class="t-button t-about">About</button>
                     <button class="t-button t-latest">Recent Tweet</button>
-                    <a class="t-button t-follow" href="https://twitter.com/aylwardam?s&#x3D;09" target="_blank" rel="no-opener">Follow</a>
+                    <a class="t-button t-follow" href="https://twitter.com/aylwardam" target="_blank" rel="no-opener">Follow</a>
                 </footer>
 
                 <div class="t-bio">
                     <p class="t-bio-name">Alex Aylward</p>
                     <p>I&#x27;m a historian, and occasional philosopher, of science, based in the UK. My main interests are in history of evolution, eugenics, and genetics.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@bbolman">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Brad Bolman</h2>
+                        <a class="t-handle" href="https://twitter.com/bbolman"><img src="./img/twitter.svg">
+                            <p>@bbolman</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/bbolman" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Brad Bolman</p>
+                    <p>Historian of biology and physics with an emphasis on animals and social theory.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@beckyfh">
@@ -348,7 +427,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Rebekah Higgitt</p>
                     <p>Historian of science @KentCHOTS @UniKentHistory, leading @Met_Sci. Former museum curator &amp; Guardian Science blogger</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@bhgross144">
@@ -374,7 +453,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Ben Gross</p>
                     <p>Vice President for Research and Scholarship, Linda Hall Library</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@bioethistorian">
@@ -400,7 +479,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Jessica Martucci</p>
                     <p>Historian of modern sci/tech/med, bioethics, gender, religion, and disability. Particularly interested in the mid-20th century. </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@BookScribbler">
@@ -426,7 +505,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Matthew Daniel Eddy</p>
                     <p>Interests:  The emergence of the environmental sciences and the developmental interface between the human sciences and information technologies</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@CancerHistorian">
@@ -452,7 +531,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Robin Scheffler</p>
                     <p>Leo Marx Career Development Professor in History and Culture of Science and Technology at MIT. Studies the history of cancer and biotechnology.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@ccmmody">
@@ -478,7 +557,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Cyrus Mody</p>
                     <p>Historian of recent applied sciences, with particular interest in counter-countercultures and commercialization of academic research.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@Cepaea">
@@ -504,7 +583,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Roberta Millstein</p>
                     <p>History &amp; Philosophy of biology, particularly evolution, ecology, &amp; environmental ethics. Historical work includes Leopold, Darwin, 20th c evol</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@cesare_p">
@@ -530,7 +609,59 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Cesare Pastorino</p>
                     <p>Intellectual and cultural historian. I work on early modern empiricism, natural philosophy, material culture, antiquarianism. </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@ChaokangTai">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Chaokang Tai</h2>
+                        <a class="t-handle" href="https://twitter.com/ChaokangTai"><img src="./img/twitter.svg">
+                            <p>@ChaokangTai</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/ChaokangTai" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Chaokang Tai</p>
+                    <p>PhD researcher in History of Science: late modern astronomy; visual science; historical epistemology; science and society; scholarly personae.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@chemistrykit">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Kit Chapman</h2>
+                        <a class="t-handle" href="https://twitter.com/chemistrykit"><img src="./img/twitter.svg">
+                            <p>@chemistrykit</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/chemistrykit" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Kit Chapman</p>
+                    <p>Kit is interested in the history of 20th and 21st century element discovery, particularly of synthetic elements. His book Superheavy, which charts the Cold War battle for the periodic table, will be published by Bloomsbury Sigma in June 2019.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@cienciaconarte">
@@ -556,7 +687,33 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Elisa Garrido</p>
                     <p>Academic visitor at University of Oxford 2019-2020. Project ‘Female Science and Visual Space: Witches, Supporters, and Heroines”. #SciArtFem</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@cindyermus">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Cindy Ermus</h2>
+                        <a class="t-handle" href="https://twitter.com/cindyermus"><img src="./img/twitter.svg">
+                            <p>@cindyermus</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/cindyermus" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Cindy Ermus</p>
+                    <p>Cindy Ermus (@CindyErmus) is Assistant Professor of History at the University of Lethbridge. She has published on disease and disaster management in eighteenth-century Europe and the Atlantic, and she is the editor of a volume entitled, Environmental Disaster in the Gulf South: Two Centuries of Catastrophe, Risk, and Resilience (LSU Press, 2018). Her current book project is a transnational study of the Plague of Provence of 1720 (?Great Plague of Marseille?), one of the last outbreaks of plague in Western Europe. She is also co-founder, executive editor, and contributor at AgeofRevolutions.com.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@citizensciences">
@@ -582,33 +739,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Bruno Strasser</p>
                     <p>Historian of contemporary science &amp; technology, working on public participation, published Collecting Experiments: Making Big Data Biology 2019.</p>
-                    <button class="t-bio-close">X</button>
-                </div>
-            </article>
-            <article class="t-entry" data-id="@CLazaroffPuck">
-                <div class="t-circle-set">
-                    <div class="t-circle"></div>
-                    <div class="t-circle"></div>
-                </div>
-                <header class="t-top">
-                    <img class="t-image" src="./img/profile.jpg" alt="">
-                    <div class="t-body">
-                        <h2 class="t-name">Cameron Lazaroff-Puck</h2>
-                        <a class="t-handle" href="https://twitter.com/CLazaroffPuck"><img src="./img/twitter.svg">
-                            <p>@CLazaroffPuck</p>
-                        </a>
-                    </div>
-                </header>
-                <footer class="t-footer">
-                    <button class="t-button t-about">About</button>
-                    <button class="t-button t-latest">Recent Tweet</button>
-                    <a class="t-button t-follow" href="https://twitter.com/CLazaroffPuck" target="_blank" rel="no-opener">Follow</a>
-                </footer>
-
-                <div class="t-bio">
-                    <p class="t-bio-name">Cameron Lazaroff-Puck</p>
-                    <p>PhD Candidate studying 19th-century physics and its relationship to technology and industry. Analogies too.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@CLazaroffPuck">
@@ -634,7 +765,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Cameron Lazaroff-Puck</p>
                     <p>Historian of Physics and Technology working on Maxwell and the intersection of electromagnetic theory and technology in the 19th Century </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@CleoCZ">
@@ -660,7 +791,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Cléo Chassonnery-Zaïgouche</p>
                     <p>I am an historian of economics working on discrimination, wages and expertise</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@cmadruga">
@@ -686,7 +817,79 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Catarina Madruga</p>
                     <p>PhD student of HPS at the University of Lisbon, working on the intricate relations between natural history collections and imperial networks </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@ColdWarScience">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Audra J. Wolfe</h2>
+                        <a class="t-handle" href="https://twitter.com/ColdWarScience"><img src="./img/twitter.svg">
+                            <p>@ColdWarScience</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/ColdWarScience" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Audra J. Wolfe</p>
+                    <p>Audra J. Wolfe, Ph.D. is a Philadelphia-based writer, editor, and historian. She is the author of Freedom?s Laboratory: The Cold War Struggle for the Soul of Science (2018) and Competing with the Soviets: Science, Technology, and the State in Cold War America (2013). Her articles have appeared in both scholarly and more popular venues, including the Washington Post, The Atlantic.com, Slate, and the popular podcast American History Tellers. 
+ 
+ 
+ 
+ Wolfe holds a Ph.D. in the History and Sociology of Science from the University of Pennsylvania (2002). Previously, she studied biochemistry and chemistry at Purdue University (B.S., 1997). She has taught courses on Cold War science as well as science and the media at the University of Pennsylvania. As a publishing professional, Wolfe has worked at the University of Pennsylvania Press, Rutgers University Press, and the Chemical Heritage Foundation, where she additionally served as executive producer for an award-winning podcast, Distillations. Her editorial and publishing consulting company, The Outside Reader, supports the work of scholars and scholarly publishers. 
+ 
+ 
+ 
+ Additional information is available on Wolfe?s website, http://audrajwolfe.com. She tweets @ColdWarScience.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@Conevery">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Conevery Bolton</h2>
+                        <a class="t-handle" href="https://twitter.com/Conevery"><img src="./img/twitter.svg">
+                            <p>@Conevery</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/Conevery" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Conevery Bolton</p>
+                    <p>Historian of science, medicine, environment, and energy who writes and teaches at Boston College. Currently finishing a book about mid-American earthquakes, induced seismicity, and the shale boom, with science journalist Anna Kuchment (@akuchment). 
+ 
+ Co-winner along with Peter Kastor of 2012 Margaret W. Rossiter Prize for the History of Women in Science from HSS for our article on the health of Sacagawea in the Lewis &amp;amp; Clark Expedition. 
+ 
+ Past books: 
+ 
+ The Lost History of the New Madrid Earthquakes (2013): history of Mississippi Valley quakes in 1811-12 that impacted US settlement, Indian emigration and Native resistance, bodily well-being, religion, and war, but were forgotten and elided until recent seismology has made them again an object of scientific study and disaster preparation.
+ 
+ The Health of the Country: How Americans Understood Themselves and Their Land (2002): exploration of the profound connections understood to exist between bodily health and environmental well-being in the 19th century, connections which shaped US settlement, racial ideas, agriculture, and medical science. Winner of the 2003 George Perkins Marsh book prize from the American Society for Environmental History. 
+ 
+ Other writings: medical geography, the medical work of Anton Chekhov, health travel, the 20th-century language system ISOTYPE, women?s health in the 19th century. 
+ 
+ Awards &amp;amp; support from National Endowment for the Humanities, Radcliffe Institute for Advanced Study, Dibner Institute for the History of Science &amp;amp; Technology, Arkansas Women?s History Institute. Always glad to talk earthquakes, energy, health/environment relations, 19th-c fiction, or regionally-correct pronunciation of ?Missouri.?</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@crystaljjlee">
@@ -712,7 +915,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Crystal Lee</p>
                     <p>Disability studies, history of science, and human-computer interaction</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@cstantina">
@@ -738,7 +941,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Céline Stantina</p>
                     <p>PhD candidate in history at McGill University.  Early modernist / History of Science and Zoology / Natural History of Whales</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@curatorconnelly">
@@ -764,7 +967,33 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Charlotte Connelly</p>
                     <p>Curator of The Polar Museum at the Scott Polar Research Institute, University of Cambridge. PhD student researching Ohm&#x27;s law.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@CyborgApologist">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Joshua Earle</h2>
+                        <a class="t-handle" href="https://twitter.com/CyborgApologist"><img src="./img/twitter.svg">
+                            <p>@CyborgApologist</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/CyborgApologist" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Joshua Earle</p>
+                    <p>PhD Candidate in STS at Virginia Tech. Studies the History of Medicine, particularly Eugenics and Genetic science, applying the lessons learned (or not) to current genetic and technological advancement.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@D_OReagan">
@@ -790,7 +1019,61 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Douglas O&#x27;reagan</p>
                     <p>Historian of industry, technology, &amp; national security. Author of Taking Nazi Technology (http://amzn.com/1421428873/, out 2019).</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@danajsimmons">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Dana Simmons</h2>
+                        <a class="t-handle" href="https://twitter.com/danajsimmons"><img src="./img/twitter.svg">
+                            <p>@danajsimmons</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/danajsimmons" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Dana Simmons</p>
+                    <p>My research interests include hunger, nutrition, soil, political economy, the human sciences and feminist theory. I am author of _Vital Minimum: Needs, Science and Politics in Modern France_. I am currently working on a history of the science and politics of hunger and food insecurity in the postwar period. I have a side project on the history of the Impostor Syndrome.
+ 
+ I am also faculty co-organizer of the UCR Science Studies group, which is committed to building a community inclusive of marginalized knowledge makers in STS.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@darwinsbulldog">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Michael Barton</h2>
+                        <a class="t-handle" href="https://twitter.com/darwinsbulldog"><img src="./img/twitter.svg">
+                            <p>@darwinsbulldog</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/darwinsbulldog" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Michael Barton</p>
+                    <p>Michael D. Barton is an independent historian of science, interested in Darwin and the history of evolutionary thought, often shared through his blog The Dispersal of Darwin. He currently is co-editor for two volumes of the Correspondence of John Tyndall (University of Pittsburgh Press), and previously worked on the Tyndall Correspondence Project as a letter transcriber. In 2018, he began work as a freelance transcriber for the Alfred Russel Wallace Correspondence Project. He received both his MA (2010) and BA (2008) in History from Montana State University (Bozeman, MT). His MA paper, ?The ?efficient defender of a fellow-scientific man?: John Tyndall, Darwin, and Preaching Pure Science in Nineteenth-Century America,? looked at the physicist Tyndall?s support for Darwin.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@david_glasner">
@@ -816,7 +1099,33 @@
                 <div class="t-bio">
                     <p class="t-bio-name">David Glasner</p>
                     <p>A UCLA Ph.D. who writes and blogs abouot the history monetary of theory and macro and the problematic nature of modern macro </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@davidjr9711">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">David Robertson</h2>
+                        <a class="t-handle" href="https://twitter.com/davidjr9711"><img src="./img/twitter.svg">
+                            <p>@davidjr9711</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/davidjr9711" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">David Robertson</p>
+                    <p>I am a doctoral candidate in Princeton University?s Program in the History of Science. My historical interests include colonial and postcolonial history, the history of anthropology, and the history of the human sciences with an emphasis on the mind sciences. Previously I obtained an MA in history from the University of Sydney. My thesis examined the history of psychiatric fieldwork undertaken in Aboriginal communities across the second half of the twentieth century. My dissertation investigates efforts to standardize psychiatric classification and practice from the 1950s onward with an emphasis on the role that medical instruments played in this process. Toward this end I am currently living in Geneva, where I am engaged in ongoing research in the organization?s archives.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@dengjianjin">
@@ -842,7 +1151,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Dengjian Jin</p>
                     <p>Dengjian Jin is John and Ann Curley Faculty Chair in International Studies, Business, and Management at Dickinson College. </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@dominikhhh">
@@ -868,7 +1177,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Dominik Huenniger</p>
                     <p>Historian of science, medicine, museums, humans &amp; other animals, mainly insects, ca. 1750-1850. Also: environmental history &amp; material culture.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@DrChrisGrocott">
@@ -894,7 +1203,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Chris Grocott</p>
                     <p>Historian of economic thought with a particular focus on Hayek, neoliberalism, and imperialism.  </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@DrJamesHannam">
@@ -920,7 +1229,33 @@
                 <div class="t-bio">
                     <p class="t-bio-name">James Hannam</p>
                     <p>PhD from Cambridge (2008) on early modern universities. Interested in big-picture history of science and currently trading as an accountant. </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@DrJSchramm">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Jeff Schramm</h2>
+                        <a class="t-handle" href="https://twitter.com/DrJSchramm"><img src="./img/twitter.svg">
+                            <p>@DrJSchramm</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/DrJSchramm" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Jeff Schramm</p>
+                    <p>History of Technology, History of Science, 20th Century U.S. Social/Labor/Urban, Modern Europe/World. Historian of modern technology. Areas include transportation, mining, engineering, and industrialization. Ph.D. Lehigh University.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@drmustafayavuz">
@@ -946,7 +1281,7 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Mustafa Yavuz</p>
                     <p>I am a Biologist and Historian of Biosciencers at History of Science Department, Istanbul Medeniyet University. I am interested in vitality.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@drpicardhis">
@@ -972,7 +1307,59 @@
                 <div class="t-bio">
                     <p class="t-bio-name">Danielle Picard</p>
                     <p>Historian of science, specializing in the sciences of the body and mind. Currently working on disability in science of work. Digital humanist.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@DrSerpentine">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Christine Keiner</h2>
+                        <a class="t-handle" href="https://twitter.com/DrSerpentine"><img src="./img/twitter.svg">
+                            <p>@DrSerpentine</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/DrSerpentine" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Christine Keiner</p>
+                    <p>I am a historian of science, politics, and the marine environment, and I teach a variety of courses dealing with the history of science, technology, and the environment in the Science, Technology, and Society Department and the History Department at RIT. My book The Oyster Question: Scientists, Watermen, and the Maryland Chesapeake Bay since 1880 (University of Georgia Press, 2009) won the 2010 Forum for the History of Science in America Prize (History of Science Society), Maryland Preservation Award for Outstanding Heritage Book (Maryland Historical Trust), and Honorable Mention for the Frederick Jackson Turner Award (Organization of American Historians). My forthcoming book addresses the environmental history of the unbuilt Central American sea-level canal.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@eahennessy">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Elizabeth Hennessy</h2>
+                        <a class="t-handle" href="https://twitter.com/eahennessy"><img src="./img/twitter.svg">
+                            <p>@eahennessy</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/eahennessy" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Elizabeth Hennessy</p>
+                    <p>Geographer, Political Ecologist, Environmental Historian, Latin Americanist, STS-er who spends a lot of time thinking and writing about giant tortoises, oil palm, and Environmental Justice in a Multispecies World. Book on Galapagos out in the fall with Yale UP.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@ehud">
@@ -1001,7 +1388,7 @@
 http://www.ehudlamm.com/
 
 Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@electricpunkah">
@@ -1027,7 +1414,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Animesh Chatterjee</p>
                     <p>Candidate for PhD at Leeds Trinity University studying “Conflict and Identity in the Social Life of Electricity in Colonial Calcutta, 1880-1925”</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@elmilam">
@@ -1053,7 +1440,33 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Erika Milam</p>
                     <p>I teach the history of science at Princeton University, with a specialization in the modern life &amp; human sciences. #histSTM #envhist #histscifi</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@elouson">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Ellie Louson</h2>
+                        <a class="t-handle" href="https://twitter.com/elouson"><img src="./img/twitter.svg">
+                            <p>@elouson</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/elouson" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Ellie Louson</p>
+                    <p>Dr. Ellie Louson is an academic specialist at Michigan State University. She works in the Hub for Innovation in Learning and Technology on curriculum development and science communication projects. She also teaches HPS at Lyman Briggs College, MSU. A proud Canadian, Ellie studied at Bishop&#x27;s, the IHPST (MA) and York&#x27;s STS program (PhD), where her research focused on wildlife documentaries, spectacle, and staging practices. She tweets about higher ed, HPS, museums, science-art collaborations, and work-life balance.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@Emilywebz">
@@ -1079,7 +1492,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Emily Webster</p>
                     <p>Ph.D. Student in Environmental History of the British Empire at UChicago. Anthropocene, infect. disease, hist med, epidemiology. </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@engelmal81">
@@ -1105,7 +1518,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Lukas Engelmann</p>
                     <p>Chancellor&#x27;s Fellow at University of Edinburgh, History and Sociology of Biomedicine, History of Twentieth Century Epidemiology</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@EtheHerring">
@@ -1131,7 +1544,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Emily Herring</p>
                     <p>Historian and philosopher of biology. My current research concerns the reception of French philosopher Henri Bergson among biologists. </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@ExplorationBlog">
@@ -1157,7 +1570,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Michael Robinson</p>
                     <p>Prof at U Hartford, interested in travel, exploration, gender, &amp; extreme environments. Host of exploration podcast Time to Eat the Dogs.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@FossilHistory">
@@ -1183,7 +1596,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Paige Madison</p>
                     <p>Historian of paleoanthropology. PhD student @ASU, on a Fulbright in Indonesia studying history, science, and the story of Homo floresiensis.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@fsposin">
@@ -1210,7 +1623,59 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                     <p class="t-bio-name">Filippo Maria Sposini</p>
                     <p>I am very much concerned with the issue of normality. I approach this problem by studying the certification of insanity in the 19th century.
 </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@GalleKarl">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Karl Galle</h2>
+                        <a class="t-handle" href="https://twitter.com/GalleKarl"><img src="./img/twitter.svg">
+                            <p>@GalleKarl</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/GalleKarl" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Karl Galle</p>
+                    <p>Historian of astronomy and other mathematical arts, especially but not exclusively in the context of Germany, Poland, and other parts of Central Europe during the late Medieval and Renaissance eras. I currently live in Cairo, Egypt, and had a post-PhD career in science policy and international development, which means my Twitter feed will also occasionally reflect scholarly news or interests in those areas. My largest ongoing project is a biographical study of Nicholas Copernicus and his contemporaries that attempts to give greater weight to his political, administrative, and diplomatic activities.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@galtonsbox">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Ry Marcattilio-Mccracken</h2>
+                        <a class="t-handle" href="https://twitter.com/galtonsbox"><img src="./img/twitter.svg">
+                            <p>@galtonsbox</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/galtonsbox" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Ry Marcattilio-Mccracken</p>
+                    <p>I am an historian specializing in the history of science and medicine in the United States. I work as a Lecturer at Oklahoma State University (teaching online courses) and as an Adjunct Professor (teaching live courses) at Southwest Minnesota State University. Currently, I?m writing a book about eugenics, sterilization, and carceral power at a girls? reform school in Kansas (to be complete in 2018?see page for more details). I have taught the American history survey as well as courses on the Gilded Age, Modern Civ 1500-present, American Thought and Culture, and WWII. I have in the past also taught courses on the history of evolutionary theory, magical realism in literature, and composition and rhetoric.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@gbarrett_hist">
@@ -1236,7 +1701,33 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Gordon Barrett</p>
                     <p>Dept Lecturer in Modern Chinese History &amp; Politics, working on 20th c. (esp. Mao era): science diplomacy &amp; exchange, psy disciplines, physics.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@geoffbil">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Geoff Bil</h2>
+                        <a class="t-handle" href="https://twitter.com/geoffbil"><img src="./img/twitter.svg">
+                            <p>@geoffbil</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/geoffbil" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Geoff Bil</p>
+                    <p>My research centers on interactions between scientific and vernacular knowledge systems, with particular reference to plants and the environment. My doctoral thesis, &amp;quot;Indexing the Indigenous: Plants, Peoples and Empire in the Long Nineteenth Century,&amp;quot; examined the shifting significance of indigenous knowledge in relation to scientific botany. I&#x27;m currently pursuing a follow-up project, entitled &amp;quot;Fields of Empire: Science, Ethnoscience and the Making of the American Century,&amp;quot; which extends these concerns by looking at American engagements with Southeast Asian and Latin American indigenous knowledges under the emerging disciplinary rubrics of ethnobotany and ethnoecology. In general, I&#x27;m fascinated by knowledge circulations and translations between disciplines, cultures and localities. My work also strives to imbricate imperial histories of science with present-day colonial contexts, and incorporate indigenous critical perspectives alongside STS approaches.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@gerthuskens">
@@ -1262,7 +1753,111 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Gert Huskens</p>
                     <p>Gert Huskens is currently writing a PhD on ‘Belgian diplomatic representatives in Egypt before WW1 and the making of Egyptology&#x27;.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@GordinMichael">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Michael D. Gordin</h2>
+                        <a class="t-handle" href="https://twitter.com/GordinMichael"><img src="./img/twitter.svg">
+                            <p>@GordinMichael</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/GordinMichael" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Michael D. Gordin</p>
+                    <p>I teach the history of modern and contemporary science at Princeton University, with a specialization in the physical sciences and Russian, European, and American history. Author of: A Well-Ordered Thing: Dmitrii Mendeleev and the Shadow of the Periodic Table (revised edition 2019); Scientific Babel: How Science Was Done Before and After Global English (2015); The Pseudoscience Wars: Immanuel Velikovsky and the Birth of the Modern Fringe (2012); Red Cloud at Dawn: Truman, Stalin, and the End of the Atomic Monopoly (2009); and Five Days in August: How World War II Became a Nuclear War (2007). He does not own a tie with the periodic table on it.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@greg_m_priest">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Greg Priest</h2>
+                        <a class="t-handle" href="https://twitter.com/greg_m_priest"><img src="./img/twitter.svg">
+                            <p>@greg_m_priest</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/greg_m_priest" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Greg Priest</p>
+                    <p>Greg Priest is a PhD candidate (ABD) in History and a member of the Program of History and Philosophy of Science at Stanford University. Greg focuses on the history of evolutionary biology, particularly Charles Darwin. He also works on philosophy of history, narrative, and scientific diagramming. Greg&#x27;s most recent publication is a 2018 article on Darwin?s tree diagrams in a special issue of the journal Endeavour devoted to the practice of scientific diagramming, a special issue that Greg conceived and of which he was principal editor. His article ?Charles Darwin?s Theory of Moral Sentiments: What Darwin&#x27;s Ethics Really Owes to Adam Smith? won the 2017 Forkosch Prize for the best article published in the Journal of the History of Ideas.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@GregoryRupik">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Gregory Rupik</h2>
+                        <a class="t-handle" href="https://twitter.com/GregoryRupik"><img src="./img/twitter.svg">
+                            <p>@GregoryRupik</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/GregoryRupik" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Gregory Rupik</p>
+                    <p>Historian and philosopher of biology, focusing on organismal agency in German Romantic Biology and contemporary evolution theory.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@heidimorefield">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Heidi Morefield</h2>
+                        <a class="t-handle" href="https://twitter.com/heidimorefield"><img src="./img/twitter.svg">
+                            <p>@heidimorefield</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/heidimorefield" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Heidi Morefield</p>
+                    <p>Ph.D. Candidate in History of Medicine at Johns Hopkins University. Steering Committee Member @HSSFHHMLS. Interested in technological approaches to global health and development, humanitarianism, drug shortages, and foreign aid, especially in Africa.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@HeinrichFaust3">
@@ -1288,7 +1883,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Sarah Lang</p>
                     <p>I am a PhD candidate in the Digital Humanities and the History of Science working on the Neo-Latin early modern alchemy of Michael Maier.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@HelenPiel">
@@ -1314,7 +1909,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Helen Piel</p>
                     <p>PhD candidate in the history of 20C evolutionary biology. Researching John Maynard Smith&#x27;s archive.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@HistorSci">
@@ -1340,7 +1935,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Lissa Roberts</p>
                     <p>History of Science publishes innovative articles and special issues about the history and historiography of science, medicine and technology. </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@hkraghs">
@@ -1366,7 +1961,59 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Henrik Kragh Sørensen</p>
                     <p>History and philosophy of mathematical practice. 19th century mathematics.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@hoposjournal">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">The Hopos Journal</h2>
+                        <a class="t-handle" href="https://twitter.com/hoposjournal"><img src="./img/twitter.svg">
+                            <p>@hoposjournal</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/hoposjournal" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">The Hopos Journal</p>
+                    <p>HOPOS is the official journal of the International Society for the History of Philosophy of Science. The Editor of the journal posts updates on articles and reviews in the journal and news from the profession.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@IsisJournal">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Isis Journal</h2>
+                        <a class="t-handle" href="https://twitter.com/IsisJournal"><img src="./img/twitter.svg">
+                            <p>@IsisJournal</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/IsisJournal" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Isis Journal</p>
+                    <p>Isis is a publication of the History of Science Society. Since its inception in 1912, Isis has featured scholarly articles, research notes and commentary on the history of science, medicine, and technology, and their cultural influences. Review essays and book reviews on new publications in the field are also included. This is the oldest (and most widely circulating) English-language journal in the field.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@JaimieMurdock">
@@ -1392,7 +2039,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Jaimie Murdock</p>
                     <p>PhD candidate, digital historian, focusing on the intellectual development of Darwin&#x27;s Origin of Species.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@jaivirdi">
@@ -1418,7 +2065,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Jaipreet Virdi</p>
                     <p>Historian of medicine, technology,  and disability. Finishing book manuscript, _Hearing Happiness: Fakes, Frauds, and Fads in Deafness Cures_.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@JamesEdChristie">
@@ -1444,7 +2091,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">James Christie</p>
                     <p>Historian of natural philosophy/science/ideas, interested in cosmology, biology, astrology and the extraterrestrial life debate.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@jaredmneumann">
@@ -1470,7 +2117,33 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Jared Neumann</p>
                     <p>PhD student in HPS with interests in logic, computation, cognitive science, and language, especially as they relate to methods of discovery.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@JFleminghistory">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Jim Fleming</h2>
+                        <a class="t-handle" href="https://twitter.com/JFleminghistory"><img src="./img/twitter.svg">
+                            <p>@JFleminghistory</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/JFleminghistory" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Jim Fleming</p>
+                    <p>Jim Fleming is the Charles A. Dana Professor of Science, Technology, and Society at Colby College, Maine. He has written extensively on the history of weather, climate, technology, and the environment including social, cultural, and intellectual aspects. His books include Meteorology in America (Johns Hopkins, 1990), Historical Perspectives on Climate Change (Oxford, 1998), The Callendar Effect (AMS, 2007), Fixing the Sky (Columbia, 2010), Inventing Atmospheric Science (MIT, 2016), and Into the Clouds: Joanne Simpson and the Tropical Atmosphere (MIT, in press). Profile: http://www.colby.edu/profile/jfleming</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@john_s_wilkins">
@@ -1496,7 +2169,33 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">John Wilkins</p>
                     <p>Philosopher, punster, fatso. Working on a book on social dominance and hierarchy. Talk about religion, politics and music when I am avoiding wor</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@johnlidwell">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">John Lidwell-Durnin</h2>
+                        <a class="t-handle" href="http://twitter.com/johnlidwell"><img src="./img/twitter.svg">
+                            <p>@johnlidwell</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="http://twitter.com/johnlidwell" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">John Lidwell-Durnin</p>
+                    <p>Historian of science at the Centre for the History of Science, Medicine, and Technology at Oxford. I work on heredity, climate, and the history of the life sciences in the long nineteenth century. My current research is on colonial agricultural practices and the production of knowledge on acclimatization and the effects of environment on cultivated varieties.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@JoserraMarcaida">
@@ -1522,7 +2221,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Jose Ramon Marcaida</p>
                     <p>Historian of early modern art and science in the Iberian world</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@jotis13">
@@ -1548,7 +2247,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Jessica Otis</p>
                     <p>My research focuses on early modern Britain and the cultural history of mathematics.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@jpjjr1961">
@@ -1574,7 +2273,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">John Jackson</p>
                     <p>I study the history and philosophy of the scientific study of race. </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@justwrite">
@@ -1601,7 +2300,111 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                     <p class="t-bio-name">Allison Scott Majure</p>
                     <p>Starting Point - A Medical and Legal History of the Fetus
 1996 Undergraduate Thesis won Honorable Mention from AAAS, Pacific Division.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@k8shep">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Kathleen Sheppard</h2>
+                        <a class="t-handle" href="https://twitter.com/k8shep"><img src="./img/twitter.svg">
+                            <p>@k8shep</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/k8shep" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Kathleen Sheppard</p>
+                    <p>Historian of science, especially women and Egyptology.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@KaraWSwanson">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Kara Swanson</h2>
+                        <a class="t-handle" href="https://twitter.com/KaraWSwanson"><img src="./img/twitter.svg">
+                            <p>@KaraWSwanson</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/KaraWSwanson" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Kara Swanson</p>
+                    <p>Historian of sci/tech/medicine, gender &amp;amp; law, IP &amp;amp; property prof @NUSL, author Banking on the Body http://www.hup.harvard.edu/catalog.php?isbn&#x3D;9780674281431</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@KatiStraner">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Katalin Straner</h2>
+                        <a class="t-handle" href="https://twitter.com/KatiStraner"><img src="./img/twitter.svg">
+                            <p>@KatiStraner</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/KatiStraner" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Katalin Straner</p>
+                    <p>I am a historian of modern Europe, specialising in the history of science, urban history and the study of translation and reception in the history of ideas. Most of my work has focused on the history of Habsburg Central Europe, more specifically Hungary, in the long nineteenth century. My research interests include the academic and popular reception of Darwinism and evolution in Hungary and Central Europe; the study of knowledge production and transfer in the long nineteenth century; the role of the city and urban culture, including the urban press, in the circulation and transformations of knowledge; the history of scientific societies, associations and institutions; and the effect of migration and exile on knowledge transfer.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@kevinbaker">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Kevin Baker</h2>
+                        <a class="t-handle" href="https://twitter.com/kevinbaker"><img src="./img/twitter.svg">
+                            <p>@kevinbaker</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/kevinbaker" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Kevin Baker</p>
+                    <p>I am a historian of science, technology, and international politics. My work examines the place of computers and expertise in global affairs. Specifically, I research the ways that computer modeling has informed global environmental, economic, and development policy and how these simulations have shaped our collective dreams and nightmares of the future. My current project is a history of The Limits to Growth report. Released in 1972 by the Club of Rome, Limits was a landmark environmental text that used a computer simulation model called ?World3? to argue that humanity was heading on a course towards environmental and economic collapse by the middle of the 21st century. My dissertation, ?World Processors: Computer Simulation, the Limits to Growth, and the Birth of Sustainable Development,? provides an intellectual biography of the World3 model, charting its unlikely origins and showing how its designers sought to convince a skeptical global public of the truth of its conclusions.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@kevintroch85">
@@ -1627,7 +2430,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Kevin Troch</p>
                     <p>Curator of collections at University of Mons (Belgium). Historian of geology and mining. Ph.D. in environmental history of coal mining</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@kingtekkers">
@@ -1653,7 +2456,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">James Stark</p>
                     <p>Associate Professor - historian of modern medicine and science. Infectious disease, ageing, public health, and medical technologies.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@Laura_J_Martin">
@@ -1679,7 +2482,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Laura Martin</p>
                     <p>Historian of science and environment. I write about the history of ecology, restoration and conservation, justice, and the sci/humanities divide</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@laura_stark">
@@ -1705,7 +2508,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Laura Stark</p>
                     <p>Historical sociologist, Vanderbilt. Chair FHHS. Author: Behind Closed Doors. Project: The Normals. Assoc Editor: History&amp;Theory. She/her/hers </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@LaykaBoon">
@@ -1731,7 +2534,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Michelle Boon</p>
                     <p>I specialize in the link between material scientific culture and digital media. In addition I am active in the Wikimedia movent.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@lea_bei">
@@ -1757,7 +2560,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Lea Beiermann</p>
                     <p>PhD candidate at Maastricht University. Nineteenth-century microscopy, history of media and STM, global networks, digital humanities.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@LeapingRobot">
@@ -1783,7 +2586,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Patrick Mccray</p>
                     <p>I research and write about science and technology and art. </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@libroraptor">
@@ -1809,7 +2612,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Alistair Kwan</p>
                     <p>Material culture insights into scientific practices both expert and novice: the spaces, buildings, instruments of knowledge-making.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@LisaHaushofer">
@@ -1835,7 +2638,33 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Lisa Haushofer</p>
                     <p>Historian of science/food/economic life. Writing history of &#x27;Wonder Foods.&#x27; Postdoc at U. of Toronto, PhD from Harvard, MD from Witten-Herdecke.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@luismormz">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Luis Moreno-Martínez</h2>
+                        <a class="t-handle" href="https://twitter.com/luismormz"><img src="./img/twitter.svg">
+                            <p>@luismormz</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/luismormz" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Luis Moreno-Martínez</p>
+                    <p>Science history &amp; education at the López Piñero Institute for Science Studies, University of Valencia (Spain).</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@MariaEPrestes">
@@ -1861,7 +2690,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Maria Elice Prestes</p>
                     <p>Historian of biology, interested in the 17th and 18th centuries natural philosophers and their experimental studies on living beings.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@marklargent">
@@ -1887,7 +2716,59 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Mark Largent</p>
                     <p>Historian of eugenics, Darwin, 20th century American medicine.  Associate Provost for Undergraduate Education at Michigan State University.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@MattJamesSSU">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Matthew James</h2>
+                        <a class="t-handle" href="https://twitter.com/MattJamesSSU"><img src="./img/twitter.svg">
+                            <p>@MattJamesSSU</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/MattJamesSSU" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Matthew James</p>
+                    <p>I write about the Galápagos Islands, Charles Darwin, and the 1905-1906 Galápagos Islands scientific collecting expedition from the California Academy of Sciences.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@maxmazzotti">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Massimo Mazzotti</h2>
+                        <a class="t-handle" href="https://twitter.com/maxmazzotti"><img src="./img/twitter.svg">
+                            <p>@maxmazzotti</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/maxmazzotti" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Massimo Mazzotti</p>
+                    <p>Professor, Department of History, and Director, Center for Science, Technology, Medicine and Society, UC Berkeley. My research interests lie at the intersection of the history of science and science studies. I focus on the historicity and situatedness of mathematics, logic, and deductive reasoning, and on the social processes that can make them universally valid. I am also interested in using technological systems and artifacts as entryways to understanding forms of social organization and power distribution. From the eighteenth century to the present. Current projects: mathematics and political reaction; Olivetti design; algorithmic life.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@mazarines">
@@ -1913,7 +2794,33 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Shannon Supple</p>
                     <p>Special collections librarian stewarding rare &amp; curious books &amp; archives; focuses on intersection of history of natural world &amp; material texts.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@mbarany">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Michael J. Barany</h2>
+                        <a class="t-handle" href="https://twitter.com/mbarany"><img src="./img/twitter.svg">
+                            <p>@mbarany</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/mbarany" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Michael J. Barany</p>
+                    <p>History, sociology, and culture of mathematics and science. http://mbarany.com</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@MelanieKiechle">
@@ -1939,7 +2846,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Melanie Kiechle</p>
                     <p>Historian of 19C US: culture, environment, cities, health, science, and smells. Lots of smells. Teaches at VA Tech. Author of Smell Detectives.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@Melinda_Baldwin">
@@ -1965,7 +2872,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Melinda Baldwin</p>
                     <p>#histSTM working on peer review, publications, and funding bodies. Senior Editor at Physics Today.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@menon_minakshi">
@@ -1991,7 +2898,33 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Minakshi Menon</p>
                     <p>I work on the history of science in South Asia. My interests include the history of colonial science, history of botany and Indian Ocean Studies</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@mlrichmond">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Marsha Richmond</h2>
+                        <a class="t-handle" href="https://twitter.com/mlrichmond"><img src="./img/twitter.svg">
+                            <p>@mlrichmond</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/mlrichmond" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Marsha Richmond</p>
+                    <p>Historian of genetics and women in biology. Professor of History at Wayne State University, Detroit, MI. Co-Editor in Chief, Journal of the History of Biology. President International Society for the History, Philosophy, and Social Studies of Biology, 2017-19.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@monicaMedHist">
@@ -2017,7 +2950,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Monica Green</p>
                     <p>Interests: medieval European medical history, including the impact of Arabic medicine, and the history of infectious diseases (plague, etc.)</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@Ms_History">
@@ -2043,7 +2976,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Marieke Hendriksen</p>
                     <p>Historian of early modern science, art, and ideas. Key words: material culture, taste, medicine, recipes, techniques, DH, DAH</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@nicolapolloni">
@@ -2069,7 +3002,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Nicola Polloni</p>
                     <p>Alexander von Humboldt Fellow at HU Berlin. Usually engaged with philosophy and history of ideas. Working on the (un)knowability of prime matter</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@oceanhistories">
@@ -2095,7 +3028,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Helen Rozwadowski</p>
                     <p>From history of oceanography to ocean history </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@OUHistSci">
@@ -2121,7 +3054,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Department Of The History Of Science, Technology And Medicine University Of Oklahoma</p>
                     <p>Official twitter account for the Department of the History of Science, Technology and Medicine at the University of Oklahoma.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@ouhoscollection">
@@ -2147,7 +3080,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Joann Palmeri</p>
                     <p>Historian of science, PhD; and Librarian, MLIS. I tweet for OU Special Collections.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@PalaudeCervero">
@@ -2173,7 +3106,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">José Ramón Bertomeu-Sánchez</p>
                     <p>The institute IILP supports research on historical and social studies on medicine, technology, science and the environment. </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@pauldudenhefer@twitter.com">
@@ -2199,7 +3132,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Paul Dudenhefer</p>
                     <p>Long-time member of the history of economics community. </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@pederanker">
@@ -2225,7 +3158,33 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Peder Anker</p>
                     <p>Historian of science with a focus on ecology, climate, environmentalism and design. Associate Professor at New York University.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@pencechp">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Charles Pence</h2>
+                        <a class="t-handle" href="https://twitter.com/pencechp"><img src="./img/twitter.svg">
+                            <p>@pencechp</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/pencechp" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Charles Pence</p>
+                    <p>Philosopher and historian of biology, studying in particular the role of chance in evolutionary theory and the use of digital tools to understand the life sciences</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@perdigu">
@@ -2252,7 +3211,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                     <p class="t-bio-name">Enrique Perdiguero-Gil</p>
                     <p>Research interest: history of medical popularisation, history of health education, history of public health, history of medical pluralism.
 </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@phalpern">
@@ -2278,7 +3237,33 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Paul Halpern</p>
                     <p>Professor of Physics, Fellow of the American Physical Society, former Chair of the APS Historic Sites Committee, and author of numerous books</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@Physhist">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Joanna Behrman</h2>
+                        <a class="t-handle" href="https://twitter.com/Physhist"><img src="./img/twitter.svg">
+                            <p>@Physhist</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/Physhist" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Joanna Behrman</p>
+                    <p>PhD Candidate in the Hist of Science at Johns Hopkins University. Specializing in the history of science education, gender, and physics.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@pierome64">
@@ -2304,7 +3289,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Piero Messina</p>
                     <p>25 yeras in space activities, international cooperation and public affairs i am now pursuing a PhD in space diplomacy</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@pkhardy">
@@ -2330,7 +3315,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Penelope K. Hardy</p>
                     <p>Historian of science and technology, especially technologies of ocean science.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@popeyed">
@@ -2356,7 +3341,33 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Sohini Chattopadhyay</p>
                     <p>PhD Candidate from History Department, Columbia University, Researches on technology, death practices and imperialism in 20th century India. </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@probswithpilots">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Tim P</h2>
+                        <a class="t-handle" href="https://twitter.com/probswithpilots"><img src="./img/twitter.svg">
+                            <p>@probswithpilots</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/probswithpilots" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Tim P</p>
+                    <p>Author, The Problem with Pilots (JHU Press, 2018); U-2 aviator; U.S. Naval War College Associate Dean</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@PTPBio">
@@ -2382,7 +3393,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Philosophy, Theory, And Practice In Biology</p>
                     <p>Open access, peer reviewed, free for authors online journal. History of biology very much a part of our purview. PTPBio.org</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@RaderKaren">
@@ -2408,7 +3419,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Karen Rader</p>
                     <p>Historian of biology, science education, science popularization.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@raulvmorgado">
@@ -2434,7 +3445,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Raúl Velasco Morgado</p>
                     <p>MD and historian of science. I work on anatomy and embryology (17th-20th C) and on the links between pediatrics, laboratory and rare diseases.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@rayabruzzi">
@@ -2460,7 +3471,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Raymond Abruzzi</p>
                     <p>Student, Science and Society program at Columbia, studying hist. of science and medicine in Great Britain. Publisher, Wiley Digital Archives</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@rmathematicus">
@@ -2486,7 +3497,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Thony Christie</p>
                     <p>History of science blogger, The Renaissance Mathematicus</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@RobertJanW">
@@ -2512,7 +3523,33 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Robert-Jan Wille</p>
                     <p>Historian of laboratory biology, atmosphere physics &amp; the European society of states, nations and empires. </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@RogerTurner13">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Roger Turner</h2>
+                        <a class="t-handle" href="https://twitter.com/RogerTurner13"><img src="./img/twitter.svg">
+                            <p>@RogerTurner13</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/RogerTurner13" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Roger Turner</p>
+                    <p>Historian of meteorology and atmospheric science, mostly 20th century. Blogs at https://picturingmeteorology.com. Involved with public history, including: documentary film; podcasting using oral history; museum displays; and helping science agencies preserve their records. Available for consulting and other history projects. Climate Change is the story of the century.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@rosicrane">
@@ -2538,33 +3575,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Rosi Crane</p>
                     <p>Working on 19C NZ life sciences especially museum oriented. </p>
-                    <button class="t-bio-close">X</button>
-                </div>
-            </article>
-            <article class="t-entry" data-id="@rossb_oxford">
-                <div class="t-circle-set">
-                    <div class="t-circle"></div>
-                    <div class="t-circle"></div>
-                </div>
-                <header class="t-top">
-                    <img class="t-image" src="./img/profile.jpg" alt="">
-                    <div class="t-body">
-                        <h2 class="t-name">Ross Brooks</h2>
-                        <a class="t-handle" href="https://twitter.com/rossb_oxford"><img src="./img/twitter.svg">
-                            <p>@rossb_oxford</p>
-                        </a>
-                    </div>
-                </header>
-                <footer class="t-footer">
-                    <button class="t-button t-about">About</button>
-                    <button class="t-button t-latest">Recent Tweet</button>
-                    <a class="t-button t-follow" href="https://twitter.com/rossb_oxford" target="_blank" rel="no-opener">Follow</a>
-                </footer>
-
-                <div class="t-bio">
-                    <p class="t-bio-name">Ross Brooks</p>
-                    <p>Queer history of biology. PhD &#x27;Evolution&#x27;s Closet: The New Biology and Homosexuality in Britain, 1871-1967.&#x27; Funded by the Wellcome Trust.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@rossb_oxford">
@@ -2590,7 +3601,33 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Ross Brooks</p>
                     <p>Historian of biology. PhD titled &#x27;Evolution&#x27;s Closet: The New Biology and Homosexuality in Britain, 1871-1967.&#x27; Funded by the Wellcome Trust.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@rossb_oxford">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Ross Brooks</h2>
+                        <a class="t-handle" href="https://twitter.com/rossb_oxford"><img src="./img/twitter.svg">
+                            <p>@rossb_oxford</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/rossb_oxford" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Ross Brooks</p>
+                    <p>Queer history of biology. PhD &#x27;Evolution&#x27;s Closet: The New Biology and Homosexuality in Britain, 1871-1967.&#x27; Funded by the Wellcome Trust.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@Sacrobosco2013">
@@ -2616,7 +3653,59 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Kathleen Crowther</p>
                     <p>I&#x27;m interested in medieval/early modern history of the book, history of science, history of medicine; as well as digital history and pedagogy.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@SchotteMargaret">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Margaret Schotte</h2>
+                        <a class="t-handle" href="https://twitter.com/SchotteMargaret"><img src="./img/twitter.svg">
+                            <p>@SchotteMargaret</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/SchotteMargaret" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Margaret Schotte</p>
+                    <p>Early modern historian @YorkUniversity (Toronto, Canada), interested in all things bookish, maritime, and history-of-science. Author of @SailingSchoolBk (@JHUPress).</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@sharronapearl">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Sharrona Pearl</h2>
+                        <a class="t-handle" href="https://twitter.com/sharronapearl"><img src="./img/twitter.svg">
+                            <p>@sharronapearl</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/sharronapearl" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Sharrona Pearl</p>
+                    <p>Sharrona Pearl is a historian and theorist of the face and body. Her most recent book, _Face/On: Face Transplants and the Ethics of the Other_, was published by the University of Chicago Press in 2017.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@sietske_fransen">
@@ -2642,7 +3731,59 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Sietske Fransen</p>
                     <p>Early modern history of science and medicine | Max Planck Resesrch Group Leader | manuscripts | prints | translation | images</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@sjangtenhagen">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Sjang Ten Hagen</h2>
+                        <a class="t-handle" href="https://twitter.com/sjangtenhagen"><img src="./img/twitter.svg">
+                            <p>@sjangtenhagen</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/sjangtenhagen" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Sjang Ten Hagen</p>
+                    <p>I am a historian of science and humanities based at the University of Amsterdam. For my current PhD project, I study relations between the disciplines of physics and history in nineteenth-century Germany. I have worked on the reception of the theory of relativity as well, and I am genuinely interested in all kinds of historical examples of interdisciplinarity.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@skidwayy">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Sarah Qidwai</h2>
+                        <a class="t-handle" href="https://twitter.com/skidwayy"><img src="./img/twitter.svg">
+                            <p>@skidwayy</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/skidwayy" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Sarah Qidwai</p>
+                    <p>Sarah Qidwai is a PhD Candidate at the Institute for the History and Philosophy of Science and Technology at the University of Toronto. Her research broadly focuses on the history of science and Islam in Colonial India. Her thesis situates Sayyid Ahmad Khan (1817-1898) as a key figure in the history of science in colonial India. Through an interdisciplinary approach, including the history of science and religion and South Asian Studies, she investigates the development and implementation of Sayyid Ahmad?s scientific thought (including human evolution and the motion of the earth) and how he dealt with science?s role in its historical context.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@Sommer_HPS">
@@ -2668,7 +3809,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Andreas Sommer</p>
                     <p>Historian of science &amp; magic and of the human sciences. Writing a book for Stanford University Press while running www.forbiddenhistories.com.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@sourdoughchef">
@@ -2694,7 +3835,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Surekha Davies</p>
                     <p>Postdoc at Utrecht Univ. &amp; author of Renaissance Ethnography and the Invention of the Human: New Worlds, Maps and Monsters (Cambridge UP, 2016).</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@steerewilliams">
@@ -2720,7 +3861,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Jacob Steere-Williams</p>
                     <p>Associate Professor of History, Editor at Journal of the History of Medicine and Allied Sciences. 19th c. Science and medicine </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@stumathieson">
@@ -2746,7 +3887,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Stuart Mathieson</p>
                     <p>Research Fellow at Queens University Belfast. Historian of science and religion, fundamentalism, and pseudoscience.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@tarbosaur">
@@ -2772,7 +3913,33 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Brian Regal</p>
                     <p>Associate professor for the History of Science, Technology, and Medicine. </p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@theroyalfig">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Ryan Feigenbaum</h2>
+                        <a class="t-handle" href="https://twitter.com/theroyalfig"><img src="./img/twitter.svg">
+                            <p>@theroyalfig</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/theroyalfig" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Ryan Feigenbaum</p>
+                    <p>Society Coordinator for History of Science Society. Researcher, instructor, and digital humanist.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@tjmisa8">
@@ -2798,7 +3965,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Thomas Misa</p>
                     <p>I&#x27;m interested in institutions, globalization, economic processes, computing and gender bias.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@TriciaPeone">
@@ -2824,7 +3991,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Tricia Peone</p>
                     <p>Works in public humanities. Historian of magic and the occult. PhD from University of New Hampshire.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@Undercoverhist">
@@ -2850,7 +4017,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Beatrice Cherrier</p>
                     <p>historian of economics; interested in the &quot;applied turn,&quot; urban economics, macro, taxation, expertise, classification &amp; gender</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@UntilDarwin">
@@ -2876,7 +4043,33 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">B. Ricardo Brown</p>
                     <p>Prof. Social Science &amp; Cultural Studies. Sociologist interested in Critical Theory, genealogies of systems of knowledge, &amp; Environmental Studies</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+            </article>
+            <article class="t-entry" data-id="@viktorblasjo">
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
+                <header class="t-top">
+                    <img class="t-image" src="./img/profile.jpg" alt="">
+                    <div class="t-body">
+                        <h2 class="t-name">Viktor Blåsjö</h2>
+                        <a class="t-handle" href="https://twitter.com/viktorblasjo"><img src="./img/twitter.svg">
+                            <p>@viktorblasjo</p>
+                        </a>
+                    </div>
+                </header>
+                <footer class="t-footer">
+                    <button class="t-button t-about">About</button>
+                    <button class="t-button t-latest">Recent Tweet</button>
+                    <a class="t-button t-follow" href="https://twitter.com/viktorblasjo" target="_blank" rel="no-opener">Follow</a>
+                </footer>
+
+                <div class="t-bio">
+                    <p class="t-bio-name">Viktor Blåsjö</p>
+                    <p>Historian of mathematics. Advocate of the mathematician&#x27;s point of view throughout history and philosophy of science and historiography. Incorrigible contrarian.</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
             <article class="t-entry" data-id="@wilkohardenberg">
@@ -2902,7 +4095,7 @@ Landscapes of Collectivity in the Life Sciences (MIT Press, 2018)</p>
                 <div class="t-bio">
                     <p class="t-bio-name">Wilko Graf Von Hardenberg</p>
                     <p>Historian of the environment and science. I research nature conservation, the concept of the sea level, and the prehistory fo the Anthropocene.</p>
-                    <button class="t-bio-close">X</button>
+                    <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>
 

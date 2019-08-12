@@ -6,7 +6,7 @@
   --manuscript: #ffffd7;
   --volta: #b2b247;
   --hss: #666633;
-  --box-shadow: 4px 8px 25px rgba(0, 0, 0, 0.15), 1px 2px 5px rgba(0, 0, 0, 0.12); }
+  --box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); }
 
 html {
   background: #eee;
@@ -184,20 +184,35 @@ html {
   align-items: center;
   display: flex;
   flex: 1;
-  margin: .25em 0 0 -.25em;
-  padding: .25em .5em .25em .25em;
-  border: 1px solid transparent;
-  border-radius: 8px;
+  margin-top: .25em;
+  position: relative;
+  width: fit-content;
+  border-bottom: 1px solid transparent;
   color: var(--black);
   line-height: 1;
-  text-decoration: none; }
+  overflow: hidden;
+  text-decoration: none;
+  transform: perspective(1px) translateZ(0); }
+  .t-handle:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: #00aced;
+    height: 2px;
+    transition-property: left, right;
+    transition-duration: .2s;
+    transition-timing-function: ease-out; }
   .t-handle > img {
     width: 1.5em;
     height: 1.5em;
     object-fit: cover;
     vertical-align: middle; }
-  .t-handle:focus, .t-handle:hover {
-    border: 1px solid var(--black); }
+  .t-handle:focus:before, .t-handle:hover:before, .t-handle:active:before {
+    left: 0;
+    right: 0; }
 
 .t-footer {
   bottom: 0;
@@ -230,7 +245,8 @@ html {
     border-bottom-right-radius: 8px;
     border-right: none; }
   .t-button:hover, .t-button:focus {
-    background: linear-gradient(90deg, #97973c, #b2b247); }
+    background: linear-gradient(90deg, #97973c, #b2b247);
+    outline: none; }
   .t-button:nth-child(2):hover, .t-button:nth-child(2):focus {
     background: linear-gradient(90deg, #b2b247, #c0c060); }
   .t-button:last-child:hover, .t-button:last-child:focus {
@@ -258,19 +274,23 @@ html {
   overflow: auto; }
 
 .t-bio-close {
-  background: none;
-  border: 1px solid var(--black);
-  cursor: pointer;
-  font-size: 1.2em;
-  font-weight: 100;
-  border-radius: 100%;
-  float: right;
-  padding: .25em;
   height: 35px;
   width: 35px;
   position: absolute;
-  right: 5px;
-  bottom: 5px; }
+  right: 15px;
+  bottom: 15px;
+  background: url("../img/close.svg");
+  border: none;
+  cursor: pointer; }
+  .t-bio-close:hover {
+    transform: scale(1.1);
+    border: none; }
+  .t-bio-close:focus {
+    outline: none;
+    border: 1px dotted var(--black); }
+  .t-bio-close:active {
+    outline: none;
+    border: none; }
 
 .t-card-show {
   display: block; }

@@ -50,7 +50,7 @@ $color-blue: #455f73;
     background-color: var(--volta);
     border: 1px solid var(--black);
     border-radius: 50%;
-    box-shadow: inset 2px 2px 3px rgba(0,0,0,.25);
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .25);
 
 
 
@@ -94,14 +94,31 @@ $color-blue: #455f73;
     align-items: center;
     display: flex;
     flex: 1;
-    margin: .25em 0 0 -.25em;
-    padding: .25em .5em .25em .25em;
+    margin-top: .25em;
+    position: relative;
+    width: fit-content;
 
-    border: 1px solid transparent;
-    border-radius: 8px;
+    border-bottom: 1px solid transparent;
     color: var(--black);
     line-height: 1;
+    overflow: hidden;
     text-decoration: none;
+    transform: perspective(1px) translateZ(0);
+
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 51%;
+        right: 51%;
+        bottom: 0;
+        background: #00aced;
+        height: 2px;
+        transition-property: left, right;
+        transition-duration: .2s;
+        transition-timing-function: ease-out;
+
+    }
 
     &>img {
         width: 1.5em;
@@ -111,12 +128,14 @@ $color-blue: #455f73;
         vertical-align: middle;
     }
 
-    &:focus,
-    &:hover {
-        border: 1px solid var(--black);
-
-        // background: var(--volta);
+    &:focus:before,
+    &:hover:before,
+    &:active:before {
+        left: 0;
+        right: 0;
     }
+
+
 }
 
 .t-footer {
@@ -167,6 +186,7 @@ $color-blue: #455f73;
     &:hover,
     &:focus {
         background: linear-gradient(90deg, scale-color($color-hss, $lightness: -15%), $color-hss);
+        outline: none;
     }
 
     &:nth-child(2) {
@@ -216,30 +236,37 @@ $color-blue: #455f73;
 }
 
 .t-bio-close {
-    background: none;
-    border: 1px solid var(--black);
-    cursor: pointer;
-    font-size: 1.2em;
-    font-weight: 100;
-    border-radius: 100%;
-    float: right;
-    padding: .25em;
     height: 35px;
     width: 35px;
     position: absolute;
-    right: 5px;
-    bottom: 5px;
+    right: 15px;
+    bottom: 15px;
 
+    background: url('../img/close.svg');
+    border: none;
+    cursor: pointer;
 
+    &:hover {
+        transform: scale(1.1);
+        border: none;
+    }
+
+    &:focus {
+        outline: none;
+        border: 1px dotted var(--black);
+    }
+
+    &:active {
+        outline: none;
+        border: none;
+    }
 }
 
 .t-card-show {
     display: block;
 }
 
-.t-card-hide {
-
-}
+.t-card-hide {}
 
 
 

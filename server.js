@@ -3,16 +3,20 @@ const fs = require('fs');
 const Handlebars = require('handlebars');
 const dotenv = require('dotenv');
 dotenv.config();
-// const Twit = required('twit');
+const Twit = required('twit');
 
-// const T = new Twit({
-//     consumer_key:
-//     consumer_secret:
-//     access_token:
-//     access_secret_token:
-//     timeout_ms: 60*1000,
+const T = new Twit({
+    consumer_key: process.env.CONSUMER_KEY,
+    consumer_secret: process.env.CONSUMER_SECRET,
+    access_token: process.env.ACCESS_TOKEN,
+    access_secret_token: process.env.ACCESS_SECRET_TOKEN,
+    timeout_ms: 60*1000,
 
-// })
+})
+
+T.get('users/show/screen_name', {screen_name: 'theroyalfig'}, function (err, data, response) {
+    console.log(data);
+})
 
 // Formstack variables
 // Should omit token before uploading
