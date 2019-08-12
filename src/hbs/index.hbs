@@ -41,15 +41,17 @@
 
             {{#each authors}}
             <article class="t-entry" data-id="{{handle}}">
-                    <div class="t-circle-set">
-                        <div class="t-circle"></div>
-                        <div class="t-circle"></div>
-                    </div>
+                <div class="t-circle-set">
+                    <div class="t-circle"></div>
+                    <div class="t-circle"></div>
+                </div>
                 <header class="t-top">
                     <img class="t-image" src="./img/profile.jpg" alt="">
                     <div class="t-body">
                         <h2 class="t-name">{{name}}</h2>
-                        <a class="t-handle" href="{{twitter}}" rel="noopener">{{handle}}</a>
+                        <a class="t-handle" href="{{twitter}}"><img src="./img/twitter.svg">
+                            <p>{{handle}}</p>
+                        </a>
                     </div>
                 </header>
                 <footer class="t-footer">

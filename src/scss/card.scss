@@ -50,7 +50,7 @@ $color-blue: #455f73;
     background-color: var(--volta);
     border: 1px solid var(--black);
     border-radius: 50%;
-    box-shadow: inset 2px 2px 5px rgba(0,0,0,.25);
+    box-shadow: inset 2px 2px 3px rgba(0,0,0,.25);
 
 
 
@@ -91,15 +91,31 @@ $color-blue: #455f73;
 }
 
 .t-handle {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    margin: .25em 0 0 -.25em;
+    padding: .25em .5em .25em .25em;
 
-    margin-top: .25em;
-
+    border: 1px solid transparent;
+    border-radius: 8px;
     color: var(--black);
+    line-height: 1;
     text-decoration: none;
+
+    &>img {
+        width: 1.5em;
+        height: 1.5em;
+        object-fit: cover;
+
+        vertical-align: middle;
+    }
 
     &:focus,
     &:hover {
-        background: var(--manuscript);
+        border: 1px solid var(--black);
+
+        // background: var(--volta);
     }
 }
 
@@ -150,7 +166,7 @@ $color-blue: #455f73;
 
     &:hover,
     &:focus {
-        // background: linear-gradient(90deg, scale-color($color-hss, $lightness: -15%), $color-hss);
+        background: linear-gradient(90deg, scale-color($color-hss, $lightness: -15%), $color-hss);
     }
 
     &:nth-child(2) {
@@ -183,11 +199,11 @@ $color-blue: #455f73;
 
 .t-bio {
     display: none;
-    height: 0;
+    height: 100%;
     left: 0;
     padding: .75em;
     position: absolute;
-    top: 0;
+    bottom: 0;
     width: 100%;
 
     background: var(--gray-matter);
@@ -196,7 +212,7 @@ $color-blue: #455f73;
     font-size: 1em;
     line-height: 1.3;
     overflow: auto;
-    transition: all 2s;
+
 }
 
 .t-bio-close {
@@ -219,7 +235,10 @@ $color-blue: #455f73;
 
 .t-card-show {
     display: block;
-    height: 100%;
+}
+
+.t-card-hide {
+
 }
 
 
