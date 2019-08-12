@@ -3,20 +3,29 @@ const fs = require('fs');
 const Handlebars = require('handlebars');
 const dotenv = require('dotenv');
 dotenv.config();
-const Twit = required('twit');
+
+const Twit = require('twit');
 
 const T = new Twit({
     consumer_key: process.env.CONSUMER_KEY,
     consumer_secret: process.env.CONSUMER_SECRET,
     access_token: process.env.ACCESS_TOKEN,
-    access_secret_token: process.env.ACCESS_SECRET_TOKEN,
-    timeout_ms: 60*1000,
-
+    access_token_secret: process.env.ACCESS_TOKEN_SECRET,
+    timeout_ms: 60*1000
 })
 
-T.get('users/show/screen_name', {screen_name: 'theroyalfig'}, function (err, data, response) {
-    console.log(data);
-})
+function twitterImage(url) {
+    user = (/.+\/(.+)/).exec(url);
+
+
+    T.get('users/show/screen_name', {screen_name: user[1]}, function (err, data, response) {
+        console.log(user, data.profile_image_url_https);
+        return data.profile_image_url_https;
+    }).then(e => console.log(e))
+
+
+
+}
 
 // Formstack variables
 // Should omit token before uploading
@@ -107,7 +116,7 @@ function Twitterstorian(name, affiliation, twitter, bio) {
     this.twitter = twitter;
     this.bio = bio;
     this.handle = twitterHandle(twitter);
-    this.profile = './img/profile.jpg';
+    this.profile = twitterImage(twitter);
 }
 
 
@@ -121,8 +130,11 @@ function nameParse(input) {
 function twitterHandle(url) {
     try {
         const handle = (/.+\/(.+)/).exec(url);
-        return `@${handle[1]}`
+        return `@${handle[1]}`;
     } catch (error) {
         console.error(`${url} is not valid`);
     }
 }
+
+
+
