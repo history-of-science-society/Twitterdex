@@ -138,12 +138,16 @@ html {
   margin: 20px;
   position: relative;
   padding: 2em 2em 0;
-  width: calc(50% - 40px);
+  width: calc(100% - 40px);
   background: var(--gray-matter);
   border: 1px solid var(--black);
   border-radius: 8px;
   box-shadow: var(--box-shadow);
   transition: all .2s; }
+
+@media all and (min-width: 640px) {
+  .t-entry {
+    width: calc(50% - 40px); } }
 
 .t-circle-set {
   display: flex;
@@ -162,6 +166,7 @@ html {
 .t-top {
   align-items: center;
   display: flex;
+  justify-content: center;
   margin-bottom: 2em; }
 
 .t-image {

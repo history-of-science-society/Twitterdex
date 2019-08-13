@@ -11,21 +11,23 @@ const T = new Twit({
     consumer_secret: process.env.CONSUMER_SECRET,
     access_token: process.env.ACCESS_TOKEN,
     access_token_secret: process.env.ACCESS_TOKEN_SECRET,
-    timeout_ms: 60*1000
+    timeout_ms: 60 * 1000
 })
 
-function twitterImage(url) {
-    user = (/.+\/(.+)/).exec(url);
 
+T.get('users/show', { user_name: 'theroyalfig' })
+  .catch(function (err) {
+    console.log('caught error', err.stack)
+  })
+  .then(function (result) {
+    // `result` is an Object with keys "data" and "resp".
+    // `data` and `resp` are the same objects as the ones passed
+    // to the callback.
+    // See https://github.com/ttezel/twit#tgetpath-params-callback
+    // for details.
 
-    T.get('users/show/screen_name', {screen_name: user[1]}, function (err, data, response) {
-        console.log(user, data.profile_image_url_https);
-        return data.profile_image_url_https;
-    }).then(e => console.log(e))
-
-
-
-}
+    console.log('data', result.data);
+  })
 
 // Formstack variables
 // Should omit token before uploading
@@ -87,18 +89,19 @@ async function start() {
 
         }
     }
+
+    // Write the HTML
     fs.readFile('./src/hbs/index.hbs', function (err, data) {
         if (!err) {
-            // make the buffer into a string
+
             const src = data.toString();
             const template = Handlebars.compile(src);
             const html = template(newObj);
             fs.writeFile('./dist/index.html', html, err => console.log(err));
-            // call the render function
 
 
         } else {
-            // handle file read error
+            console.log('Error', err)
         }
     });
 
@@ -110,16 +113,15 @@ async function start() {
 
 start();
 
+// Twitterstorian object constructor
 function Twitterstorian(name, affiliation, twitter, bio) {
     this.name = nameParse(name);
     this.affiliation = affiliation;
     this.twitter = twitter;
     this.bio = bio;
     this.handle = twitterHandle(twitter);
-    this.profile = twitterImage(twitter);
+    this.profile = './img/profile.jpg'
 }
-
-
 
 function nameParse(input) {
     let firstName = input.match(/=\s(.+)\n/);
@@ -135,6 +137,3 @@ function twitterHandle(url) {
         console.error(`${url} is not valid`);
     }
 }
-
-
-
