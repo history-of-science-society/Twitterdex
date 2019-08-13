@@ -99,8 +99,6 @@ aboutButtons.forEach(el => {
 
 tweetButtons.forEach(el => {
     el.addEventListener('click', e => {
-        console.log(e.target.parentNode.nextSibling);
-
         e.target.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.classList.remove('t-card-hide');
         e.target.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.classList.add('t-card-show');
     })
