@@ -4,8 +4,8 @@ const Handlebars = require('handlebars');
 const dotenv = require('dotenv');
 dotenv.config();
 
+// Twitter dependency
 const Twit = require('twit');
-
 const T = new Twit({
     consumer_key: process.env.CONSUMER_KEY,
     consumer_secret: process.env.CONSUMER_SECRET,
@@ -14,31 +14,9 @@ const T = new Twit({
     timeout_ms: 60 * 1000
 })
 
-
-T.get('users/show', { user_name: 'theroyalfig' })
-  .catch(function (err) {
-    console.log('caught error', err.stack)
-  })
-  .then(function (result) {
-    // `result` is an Object with keys "data" and "resp".
-    // `data` and `resp` are the same objects as the ones passed
-    // to the callback.
-    // See https://github.com/ttezel/twit#tgetpath-params-callback
-    // for details.
-
-    console.log('data', result.data);
-  })
-
 // Formstack variables
-// Should omit token before uploading
 const formId = '3315786';
 const oauth_token = process.env.API_FS;
-
-
-
-// console.log(src);
-
-
 
 let twitterstorians = [];
 let authors = {
@@ -65,11 +43,30 @@ async function start() {
     for (set in data) {
         // Access individual values
         for (el in data[set]) {
+
             let obj = new Twitterstorian(data[set][el].data[73000979].value, data[set][el].data[73000996].value, data[set][el].data[73001016].value, data[set][el].data[73001024].value);
 
-            await twitterstorians.push(obj);
-            await twitterstorians.sort((a, b) => {
 
+
+            let profilePic = new Promise((resolve, reject) => {
+                T.get('users/show', {
+                    screen_name: obj.handle
+                }, function (err, data, response) {
+                    if (!err) {
+                        let res = data.profile_image_url_https;
+                        let newRes = res.replace('normal','bigger')
+                        resolve(newRes);
+                    } else {
+                        reject(err, obj.handle);
+                    }
+                });
+            })
+
+            obj.profile = await profilePic.then(x => x);
+
+            await twitterstorians.push(obj);
+
+            await twitterstorians.sort((a, b) => {
 
                 let handleA = a.handle.toLowerCase();
                 let handleB = b.handle.toLowerCase();
@@ -105,10 +102,6 @@ async function start() {
         }
     });
 
-
-
-
-
 }
 
 start();
@@ -120,7 +113,6 @@ function Twitterstorian(name, affiliation, twitter, bio) {
     this.twitter = twitter;
     this.bio = bio;
     this.handle = twitterHandle(twitter);
-    this.profile = './img/profile.jpg'
 }
 
 function nameParse(input) {

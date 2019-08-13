@@ -59,7 +59,7 @@ $color-blue: #455f73;
 .t-top {
     align-items: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin-bottom: 2em;
 
 
@@ -67,14 +67,12 @@ $color-blue: #455f73;
 
 .t-image {
     height: 75px;
-    // flex: 0 0 auto;
+    flex: 0 0 auto;
     width: 75px;
-    // position: relative;
-    // z-index: 2;
 
 
     border-radius: 50%;
-    // transform: translateX(-40px);
+    box-shadow: var(--box-shadow);
 }
 
 .t-body {

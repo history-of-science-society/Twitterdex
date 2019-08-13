@@ -166,13 +166,15 @@ html {
 .t-top {
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin-bottom: 2em; }
 
 .t-image {
   height: 75px;
+  flex: 0 0 auto;
   width: 75px;
-  border-radius: 50%; }
+  border-radius: 50%;
+  box-shadow: var(--box-shadow); }
 
 .t-body {
   display: flex;
