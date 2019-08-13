@@ -67,17 +67,17 @@ html {
         margin-block-start: 0;
     }
 
-    a {
-        margin-top: 25px;
-        padding: 15px 20px;
+    // a {
+    //     margin-top: 25px;
+    //     padding: 15px 20px;
 
 
-        background: var(--blue);
-        border-radius: 8px;
-        color: var(--gray-matter);
-        font-weight: 600;
-        text-decoration: none;
-    }
+    //     background: var(--blue);
+    //     border-radius: 8px;
+    //     color: var(--gray-matter);
+    //     font-weight: 600;
+    //     text-decoration: none;
+    // }
 }
 
 .t-search {
@@ -120,8 +120,10 @@ html {
 }
 
 .t-join {
+    margin-top: 1em;
     padding: .5em 2em .5em .75em ;
     position: relative;
+
 
     background: var(--blue);
     border-radius: 8px;
