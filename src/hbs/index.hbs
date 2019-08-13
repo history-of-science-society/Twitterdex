@@ -19,20 +19,22 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <a class="t-join" href="https://hssonline.formstack.com/forms/twitterdex" target="_blank" rel="noopener">Join the
-        Twitterdex <span class="t-shake">🎉</span></a>
+
 
     <div class="t-container">
         <header class="t-header">
             <h1>History of Science Society Twitterdex</h1>
             <p>A Crowd-Sourced Directory of <span id="num" style="font-weight: 900"></span> History of Science
                 Twitterstorians</p>
-
+            <a class="t-join" href="https://hssonline.formstack.com/forms/twitterdex" target="_blank"
+                rel="noopener">Join the
+                Twitterdex <span class="t-shake">🎉</span></a>
         </header>
 
         <section class="t-search">
             <div class="t-search-container">
-                <input type="text" class="t-search-box" placeholder="Begin typing to search by name and bio..." autofocus>
+                <input type="text" class="t-search-box" placeholder="Begin typing to search by name and bio..."
+                    autofocus>
                 <span id="t-search-results"></span>
             </div>
             <button class="t-toggle" id="a-z">Z&nbsp;&ndash;&nbsp;A</button>
@@ -47,7 +49,7 @@
                     <div class="t-circle"></div>
                 </div>
                 <header class="t-top">
-                    <img class="t-image" src="{{profile}}" alt="">
+                    <a class="t-image-link" href="{{twitter}}"><img class="t-image" src="{{profile}}" alt=""></a>
                     <div class="t-body">
                         <h2 class="t-name">{{name}}</h2>
                         <a class="t-handle" href="{{twitter}}"><img src="./img/twitter.svg">
@@ -64,6 +66,11 @@
                 <div class="t-bio">
                     <p class="t-bio-name">{{name}}</p>
                     <p>{{bio}}</p>
+                    <button class="t-bio-close" aria-label="Close"></button>
+                </div>
+
+                 <div class="t-tweet">
+                    {{{htmlEmbed}}}
                     <button class="t-bio-close" aria-label="Close"></button>
                 </div>
             </article>

@@ -88,11 +88,21 @@ sortButton.addEventListener('click', () => {
 
 const aboutButtons = document.querySelectorAll('.t-about');
 const closeBioButtons = document.querySelectorAll('.t-bio-close');
+const tweetButtons = document.querySelectorAll('.t-latest');
 
 aboutButtons.forEach(el => {
     el.addEventListener('click', e => {
         e.target.parentNode.nextSibling.nextSibling.classList.remove('t-card-hide');
         e.target.parentNode.nextSibling.nextSibling.classList.add('t-card-show');
+    })
+});
+
+tweetButtons.forEach(el => {
+    el.addEventListener('click', e => {
+        console.log(e.target.parentNode.nextSibling);
+
+        e.target.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.classList.remove('t-card-hide');
+        e.target.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.classList.add('t-card-show');
     })
 });
 

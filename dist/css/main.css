@@ -91,15 +91,13 @@ html {
 
 .t-join {
   padding: .5em 2em .5em .75em;
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
-  background: #666633;
+  position: relative;
+  background: var(--blue);
   border-radius: 8px;
   color: var(--gray-matter);
   text-decoration: none; }
   .t-join:focus, .t-join:hover {
-    background: #4d4d26; }
+    background: #344756; }
 
 .t-toggle {
   padding: .25em .5em;
@@ -168,6 +166,10 @@ html {
   display: flex;
   justify-content: space-around;
   margin-bottom: 2em; }
+
+@media all and (max-width: 250px) {
+  .t-top {
+    flex-wrap: wrap; } }
 
 .t-image {
   height: 75px;
@@ -265,7 +267,8 @@ html {
   font-weight: 600;
   text-align: center; }
 
-.t-bio {
+.t-bio,
+.t-tweet {
   display: none;
   height: 100%;
   left: 0;

@@ -61,15 +61,18 @@ $color-blue: #455f73;
     display: flex;
     justify-content: space-around;
     margin-bottom: 2em;
+}
 
-
+@media all and (max-width: 250px) {
+    .t-top {
+        flex-wrap: wrap;
+    }
 }
 
 .t-image {
     height: 75px;
     flex: 0 0 auto;
     width: 75px;
-
 
     border-radius: 50%;
     box-shadow: var(--box-shadow);
@@ -216,7 +219,8 @@ $color-blue: #455f73;
     text-align: center;
 }
 
-.t-bio {
+.t-bio,
+.t-tweet {
     display: none;
     height: 100%;
     left: 0;

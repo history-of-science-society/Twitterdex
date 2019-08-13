@@ -121,18 +121,16 @@ html {
 
 .t-join {
     padding: .5em 2em .5em .75em ;
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
+    position: relative;
 
-    background: #666633;
+    background: var(--blue);
     border-radius: 8px;
     color: var(--gray-matter);
     text-decoration: none;
 
     &:focus,
     &:hover {
-        background: scale-color($color: #666633, $lightness: -25%)
+        background: scale-color(#455f73, $lightness: -25%)
     }
 }
 

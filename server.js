@@ -48,21 +48,50 @@ async function start() {
 
 
 
-            let profilePic = new Promise((resolve, reject) => {
-                T.get('users/show', {
-                    screen_name: obj.handle
+            let tweetId = new Promise((resolve, reject) => {
+                T.get('statuses/user_timeline', {
+                    screen_name: obj.handle,
+                    count: 1,
+                    include_rts: false
                 }, function (err, data, response) {
                     if (!err) {
-                        let res = data.profile_image_url_https;
-                        let newRes = res.replace('normal','bigger')
-                        resolve(newRes);
+                        let tweetId = data[0].id_str;
+                        resolve(tweetId);
                     } else {
                         reject(err, obj.handle);
                     }
                 });
             })
 
-            obj.profile = await profilePic.then(x => x);
+            let profImg = new Promise((resolve, reject) => {
+                T.get('users/show', {
+                    screen_name: obj.handle
+                }, function (err, data, response) {
+                    if (!err) {
+
+                        let image = data.profile_image_url_https;
+                        let biggerImage = image.replace('normal', 'bigger');
+
+                        resolve(biggerImage);
+                    } else {
+                        reject(err, obj.handle);
+                    }
+                });
+            })
+
+
+            obj.profile = await profImg.then(x => x);
+            let latestTweetId = await tweetId.then(x => x);
+            let encodedUrl = `https://publish.twitter.com/oembed?url=https%3A%2F%2Ftwitter.com%2F${obj.handleRaw}%2Fstatus%2F${latestTweetId}`
+
+            let latestTweet = await fetch(encodedUrl);
+            let latestTweetEmbed = await latestTweet.json();
+            obj.htmlEmbed = await latestTweetEmbed.html;
+
+
+
+
+
 
             await twitterstorians.push(obj);
 
@@ -111,8 +140,9 @@ function Twitterstorian(name, affiliation, twitter, bio) {
     this.name = nameParse(name);
     this.affiliation = affiliation;
     this.twitter = twitter;
-    this.bio = bio;
+    this.bio = bio.substring(0, 144);
     this.handle = twitterHandle(twitter);
+    this.handleRaw = twitterHandleRaw(twitter);
 }
 
 function nameParse(input) {
@@ -125,6 +155,15 @@ function twitterHandle(url) {
     try {
         const handle = (/.+\/(.+)/).exec(url);
         return `@${handle[1]}`;
+    } catch (error) {
+        console.error(`${url} is not valid`);
+    }
+}
+
+function twitterHandleRaw(url) {
+    try {
+        const handle = (/.+\/(.+)/).exec(url);
+        return handle[1];
     } catch (error) {
         console.error(`${url} is not valid`);
     }
