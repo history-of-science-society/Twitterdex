@@ -10,7 +10,7 @@ const searchBox = document.querySelector('.t-search-box');
 const searchResults = document.getElementById('t-search-results');
 
 searchBox.addEventListener("keyup", () => {
-    if (searchBox.value.length > 3) {
+    if (searchBox.value.length > 2) {
         divFilter(searchBox.value);
         let results = document.querySelectorAll('.t-match').length;
         searchResults.textContent = `Results: ${results.toString()}`;

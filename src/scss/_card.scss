@@ -211,12 +211,24 @@ $color-blue: #455f73;
     }
 }
 
-.t-bio-name {
+%bio {
     margin-block-end: .5em;
 
-    font-size: 1em;
     font-weight: 600;
     text-align: center;
+}
+
+.t-bio-name {
+    @extend %bio;
+
+    font-size: 1em;
+}
+
+.t-bio-affiliation {
+    @extend %bio;
+
+    font-size: smaller;
+    font-variant: italic;
 }
 
 .t-bio,
@@ -277,4 +289,31 @@ $color-blue: #455f73;
 .t-no-match {
     opacity: 0;
     display: none;
+}
+
+// Scroll bars
+.t-entry {
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #A9C3D7;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #455F73;
+        border-radius: 8px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: scale-color(#455F73, $lightness: -25%, $alpha: 1.0)
+    }
 }

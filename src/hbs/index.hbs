@@ -37,7 +37,7 @@
                     autofocus>
                 <span id="t-search-results"></span>
             </div>
-            <button class="t-toggle" id="a-z">Z&nbsp;&ndash;&nbsp;A</button>
+            <button class="t-toggle" id="a-z">A&nbsp;&ndash;&nbsp;Z</button>
         </section>
 
         <main class="t-main">
@@ -64,14 +64,15 @@
                 </footer>
 
                 <div class="t-bio">
-                    <p class="t-bio-name">{{name}}</p>
-                    <p>{{bio}}</p>
                     <button class="t-bio-close" aria-label="Close"></button>
+                    <p class="t-bio-name">{{name}}</p>
+                    <p class="t-bio-affiliation">{{affiliation</p>
+                    <p>{{bio}}</p>
                 </div>
 
                  <div class="t-tweet">
-                    {{{htmlEmbed}}}
                     <button class="t-bio-close" aria-label="Close"></button>
+                    {{{htmlEmbed}}}
                 </div>
             </article>
             {{/each}}

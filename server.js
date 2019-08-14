@@ -18,6 +18,7 @@ const T = new Twit({
 const formId = '3315786';
 const oauth_token = process.env.API_FS;
 
+// Set data variables
 let twitterstorians = [];
 let authors = {
     authors: ''
@@ -44,10 +45,11 @@ async function start() {
         // Access individual values
         for (el in data[set]) {
 
+            // Construct new Twitterstorian objects for all data
             let obj = new Twitterstorian(data[set][el].data[73000979].value, data[set][el].data[73000996].value, data[set][el].data[73001016].value, data[set][el].data[73001024].value);
 
 
-
+            // Get recent Tweets
             let tweetId = new Promise((resolve, reject) => {
                 T.get('statuses/user_timeline', {
                     screen_name: obj.handle,
@@ -63,6 +65,8 @@ async function start() {
                 });
             })
 
+            // Get profile images from Twitter
+            // TODO Combine requests (this and tweetId) into one
             let profImg = new Promise((resolve, reject) => {
                 T.get('users/show', {
                     screen_name: obj.handle
@@ -79,8 +83,10 @@ async function start() {
                 });
             })
 
-
+            // Set image profile
             obj.profile = await profImg.then(x => x);
+
+            // Get embed code for latest tweet
             let latestTweetId = await tweetId.then(x => x);
             let encodedUrl = `https://publish.twitter.com/oembed?url=https%3A%2F%2Ftwitter.com%2F${obj.handleRaw}%2Fstatus%2F${latestTweetId}`
 
@@ -88,13 +94,10 @@ async function start() {
             let latestTweetEmbed = await latestTweet.json();
             obj.htmlEmbed = await latestTweetEmbed.html;
 
-
-
-
-
-
+            // Create data context
             await twitterstorians.push(obj);
 
+            // Sort data by twitter handle
             await twitterstorians.sort((a, b) => {
 
                 let handleA = a.handle.toLowerCase();
@@ -109,6 +112,7 @@ async function start() {
                 }
             })
 
+            // Create writable data object
             newObj = await {
                 authors: twitterstorians
             }
@@ -119,13 +123,10 @@ async function start() {
     // Write the HTML
     fs.readFile('./src/hbs/index.hbs', function (err, data) {
         if (!err) {
-
             const src = data.toString();
             const template = Handlebars.compile(src);
             const html = template(newObj);
             fs.writeFile('./dist/index.html', html, err => console.log(err));
-
-
         } else {
             console.log('Error', err)
         }
@@ -145,12 +146,14 @@ function Twitterstorian(name, affiliation, twitter, bio) {
     this.handleRaw = twitterHandleRaw(twitter);
 }
 
+// Name parser
 function nameParse(input) {
     let firstName = input.match(/=\s(.+)\n/);
     let lastName = input.match(/last\s=\s(.+)/);
     return firstName[1].trim().toLowerCase().replace(/(^\w)|\s(\w)|-(\w)/g, x => x.toUpperCase()) + " " + lastName[1].trim().toLowerCase().replace(/(^\w)|\s(\w)|-(\w)/g, x => x.toUpperCase());
 }
 
+// Twitter handle parser
 function twitterHandle(url) {
     try {
         const handle = (/.+\/(.+)/).exec(url);
@@ -160,6 +163,8 @@ function twitterHandle(url) {
     }
 }
 
+// Twitter handle creator (without @)
+// TODO Combine these functions and output one array/object
 function twitterHandleRaw(url) {
     try {
         const handle = (/.+\/(.+)/).exec(url);
