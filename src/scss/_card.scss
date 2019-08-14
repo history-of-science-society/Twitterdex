@@ -211,24 +211,19 @@ $color-blue: #455f73;
     }
 }
 
-%bio {
-    margin-block-end: .5em;
-
+.t-bio-name {
+    margin-block-end: .25em;
+    font-size: 1em;
     font-weight: 600;
     text-align: center;
 }
 
-.t-bio-name {
-    @extend %bio;
-
-    font-size: 1em;
-}
-
 .t-bio-affiliation {
-    @extend %bio;
+    margin-block-end: .75em;
 
     font-size: smaller;
-    font-variant: italic;
+    font-weight: 100;
+    text-align: center;
 }
 
 .t-bio,
@@ -251,11 +246,9 @@ $color-blue: #455f73;
 }
 
 .t-bio-close {
-    height: 35px;
-    width: 35px;
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
+    height: 30px;
+    width: 30px;
+
 
     background: url('../img/close.svg');
     border: none;

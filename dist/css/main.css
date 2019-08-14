@@ -256,17 +256,17 @@ html {
   .t-button:last-child:hover, .t-button:last-child:focus {
     background: linear-gradient(90deg, #c0c060, #cbcb7c); }
 
-.t-bio-name, .t-bio-affiliation {
-  margin-block-end: .5em;
+.t-bio-name {
+  margin-block-end: .25em;
+  font-size: 1em;
   font-weight: 600;
   text-align: center; }
 
-.t-bio-name {
-  font-size: 1em; }
-
 .t-bio-affiliation {
+  margin-block-end: .75em;
   font-size: smaller;
-  font-variant: italic; }
+  font-weight: 100;
+  text-align: center; }
 
 .t-bio,
 .t-tweet {
@@ -285,11 +285,8 @@ html {
   overflow: auto; }
 
 .t-bio-close {
-  height: 35px;
-  width: 35px;
-  position: absolute;
-  right: 15px;
-  bottom: 15px;
+  height: 30px;
+  width: 30px;
   background: url("../img/close.svg");
   border: none;
   cursor: pointer; }

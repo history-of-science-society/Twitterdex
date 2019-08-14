@@ -10,8 +10,8 @@ const T = new Twit({
     consumer_key: process.env.CONSUMER_KEY,
     consumer_secret: process.env.CONSUMER_SECRET,
     access_token: process.env.ACCESS_TOKEN,
-    access_token_secret: process.env.ACCESS_TOKEN_SECRET,
-    timeout_ms: 60 * 1000
+    access_token_secret: process.env.ACCESS_TOKEN_SECRET
+    // timeout_ms: 60 * 1000
 })
 
 // Formstack variables
@@ -148,9 +148,12 @@ function Twitterstorian(name, affiliation, twitter, bio) {
 
 // Name parser
 function nameParse(input) {
-    let firstName = input.match(/=\s(.+)\n/);
-    let lastName = input.match(/last\s=\s(.+)/);
-    return firstName[1].trim().toLowerCase().replace(/(^\w)|\s(\w)|-(\w)/g, x => x.toUpperCase()) + " " + lastName[1].trim().toLowerCase().replace(/(^\w)|\s(\w)|-(\w)/g, x => x.toUpperCase());
+    const firstName = input.match(/=\s(.+)\n/);
+    const lastName = input.match(/last\s=\s(.+)/);
+    const name = firstName[1].trim().toLowerCase().replace(/(^\w)|\s(\w)|-(\w)/g, x => x.toUpperCase()) + " " + lastName[1].trim().toLowerCase().replace(/(^\w)|\s(\w)|-(\w)/g, x => x.toUpperCase());
+    name.replace(/von|the|of|and/gi, x => x.toLowerCase());
+
+    return name;
 }
 
 // Twitter handle parser
