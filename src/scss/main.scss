@@ -7,36 +7,30 @@
     --volta: #b2b247;
     --hss: #666633;
 
-    --box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-
-
-html {
-    background: #eee;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1em;
-}
-
-@media all and (min-width: 992px) {
-    html {
-        font-size: 1.2em;
-    }
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
+    --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .t-container {
-    background: var(--volta);
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    padding-bottom: 100px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    background: var(--volta);
+    font-size: 16px;
     margin: 0 auto;
     max-width: 864px;
     min-height: 100vh;
-    padding-bottom: 100px;
+
+    >a {
+        color: var(--black);
+        &:hover,
+        &:visited {
+            color: inherit;
+        }
+    }
+
 }
 
 .t-header {
@@ -122,7 +116,7 @@ html {
 
 .t-join {
     margin-top: 1em;
-    padding: .5em 2em .5em .75em ;
+    padding: .5em 2em .5em .75em;
     position: relative;
 
 
@@ -151,25 +145,26 @@ html {
     font-size: 1em;
     transition: transform 0.6s ease-out;
     outline: none;
+
     &:focus,
     &:hover {
-       background: scale-color(#f7f7ef, $lightness: -25%)
+        background: scale-color(#f7f7ef, $lightness: -25%)
     }
 
 }
 
 .t-shake {
-   position: absolute;
-   bottom: .5em;
-   right: .25em;
-   transition: transform .2s ease-in-out;
+    position: absolute;
+    bottom: .5em;
+    right: .25em;
+    transition: transform .2s ease-in-out;
 
 
 }
 
 .t-join:hover .t-shake {
 
-        transform: rotate(15deg);
+    transform: rotate(15deg);
 
 }
 
