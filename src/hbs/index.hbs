@@ -3,84 +3,106 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js">
+<html lang="en">
 <!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
+    <title>HSS Twitterdex</title>
+    <meta name="description" content="A Crowd-Sourced Directory of History of Science Twitterstorians">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
+
+    {{!-- Social Meta Tags --}}
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image"
+        content="https://digital.hssonline.org/wp-content/uploads/2019/01/Twitterdex-digital-hss-2019-01.jpg">
+    <meta name="twitter:site" content="@hssonline">
+    <meta name="twitter:title" content="HSS Twitterdex">
+    <meta name="twitter:description" content="A Crowd-Sourced Directory of History of Science Twitterstorians">
+    <meta name="twitter:creator" content="@hssonline">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="HSS Twitterdex" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://digital.hssonline.org/twitterdex/" />
+    <meta property="og:image" content="https://digital.hssonline.org/wp-content/uploads/2019/01/Twitterdex-digital-hss-2019-01.jpg" />
+    <meta property="og:description" content="A Crowd-Sourced Directory of History of Science Twitterstorians" />
+    <meta property="og:site_name" content="History of Science Society" />
+    <meta property="fb:admins" content="77247831395" />
+
 </head>
 
 <body>
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+    <div class="t-bg">
+        <div class="t-container">
+            <nav class="t-nav"><a href="https://digital.hssonline.org"
+                    class="t-link t-join">👈&nbsp;digital.hssonline</a><a class="t-join"
+                    href="https://hssonline.formstack.com/forms/twitterdex" target="_blank" rel="noopener">Join the
+                    Twitterdex&nbsp;🎉</a></nav>
+            <header class="t-header">
+                <h1>History of Science Society Twitterdex</h1>
+                <p>A Crowd-Sourced Directory of <span id="num" style="font-weight: 900"></span> History of Science
+                    Twitterstorians</p>
+            </header>
 
-
-    <div class="t-container">
-        <header class="t-header">
-            <h1>History of Science Society Twitterdex</h1>
-            <p>A Crowd-Sourced Directory of <span id="num" style="font-weight: 900"></span> History of Science
-                Twitterstorians</p>
-            <a class="t-join" href="https://hssonline.formstack.com/forms/twitterdex" target="_blank"
-                rel="noopener">Join the
-                Twitterdex <span class="t-shake">🎉</span></a>
-        </header>
-
-        <section class="t-search">
-            <div class="t-search-container">
-                <input type="text" class="t-search-box" placeholder="Begin typing to search..."
-                    autofocus>
-                <span id="t-search-results"></span>
-            </div>
-            <button class="t-toggle" id="a-z">Z&nbsp;&ndash;&nbsp;A</button>
-        </section>
-
-        <main class="t-main">
-
-            {{#each authors}}
-            <article class="t-entry" data-id="{{handle}}">
-                <div class="t-circle-set">
-                    <div class="t-circle"></div>
-                    <div class="t-circle"></div>
+            <section class="t-search">
+                <div class="t-search-container">
+                    <input type="text" class="t-search-box" placeholder="Begin typing to search..." autofocus>
+                    <span id="t-search-results"></span>
                 </div>
-                <header class="t-top">
-                    <a class="t-image-link" href="{{twitter}}"><img class="t-image" src="{{profile}}" alt=""></a>
-                    <div class="t-body">
-                        <h2 class="t-name">{{name}}</h2>
-                        <a class="t-handle" href="{{twitter}}"><img src="https://digital.hssonline.org/wp-content/uploads/2019/08/twitter.svg">
-                            <p>{{handle}}</p>
-                        </a>
+                <button class="t-toggle" id="a-z">Z&nbsp;&ndash;&nbsp;A</button>
+            </section>
+
+            <main class="t-main">
+
+                {{#each authors}}
+                <article class="t-entry" data-id="{{handle}}">
+                    <div class="t-circle-set">
+                        <div class="t-circle"></div>
+                        <div class="t-circle"></div>
                     </div>
-                </header>
-                <footer class="t-footer">
-                    <button class="t-button t-about">About</button>
-                    <button class="t-button t-latest">Recent Tweet</button>
-                    <a class="t-button t-follow" href="{{twitter}}" target="_blank" rel="no-opener">Follow</a>
-                </footer>
+                    <header class="t-top">
+                        <a class="t-image-link" href="{{twitter}}"><img class="t-image" src="{{profile}}" alt=""></a>
+                        <div class="t-body">
+                            <h2 class="t-name">{{name}}</h2>
+                            <a class="t-handle" href="{{twitter}}"><img
+                                    src="https://digital.hssonline.org/wp-content/uploads/2019/08/twitter.svg">
+                                <p>{{handle}}</p>
+                            </a>
+                        </div>
+                    </header>
+                    <footer class="t-footer">
+                        <button class="t-button t-about">About</button>
+                        <button class="t-button t-latest">Recent Tweet</button>
+                        <a class="t-button t-follow" href="{{twitter}}" target="_blank" rel="no-opener">Follow</a>
+                    </footer>
 
-                <div class="t-bio">
-                    <button class="t-bio-close" aria-label="Close"></button>
-                    <p class="t-bio-name">{{name}}</p>
-                    <p class="t-bio-affiliation">{{affiliation}}</p>
-                    <p>{{bio}}</p>
-                </div>
+                    <div class="t-bio">
+                        <button class="t-bio-close" aria-label="Close"></button>
+                        <p class="t-bio-name">{{name}}</p>
+                        <p class="t-bio-affiliation">{{affiliation}}</p>
+                        <p>{{bio}}</p>
+                    </div>
 
-                 <div class="t-tweet">
-                    <button class="t-bio-close" aria-label="Close"></button>
-                    {{{htmlEmbed}}}
-                </div>
-            </article>
-            {{/each}}
+                    <div class="t-tweet">
+                        <button class="t-bio-close" aria-label="Close"></button>
+                        {{{htmlEmbed}}}
+                    </div>
+                </article>
+                {{/each}}
 
-        </main>
+            </main>
+        </div>
     </div>
     <script src="js/main-min.js" async defer></script>
-
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 
 </html>

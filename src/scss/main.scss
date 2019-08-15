@@ -10,26 +10,67 @@
     --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-.t-container {
+* {
     box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    background: var(--hss);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+@media all and (min-width: 864px) {
+    html {
+        font-size: 1.2em;
+    }
+}
+
+.t-bg {
+    margin: 0 auto;
+    max-width: calc(864px + 1em);
+    padding: 1em;
+
+    background: var(--gray-matter);
+}
+
+.t-container {
     display: flex;
     flex-direction: column;
-    padding-bottom: 100px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-bottom: 50px;
 
     background: var(--volta);
-    font-size: 16px;
     margin: 0 auto;
     max-width: 864px;
     min-height: 100vh;
+}
 
-    >a {
-        color: var(--black);
-        &:hover,
-        &:visited {
-            color: inherit;
-        }
+.t-nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    background: var(--blue);
+}
+
+.t-join {
+    padding: .5em 2em;
+    position: relative;
+
+    color: var(--gray-matter);
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+        background: scale-color(#455f73, $lightness: -25%)
     }
+}
+
+.t-join:hover .t-shake {
+
+    transform: rotate(15deg);
 
 }
 
@@ -53,6 +94,7 @@
         margin-block-end: .25em;
         margin-block-start: .25em;
 
+        line-height: 1.1;
         text-align: center;
     }
 
@@ -62,17 +104,6 @@
         margin-block-start: 0;
     }
 
-    // a {
-    //     margin-top: 25px;
-    //     padding: 15px 20px;
-
-
-    //     background: var(--blue);
-    //     border-radius: 8px;
-    //     color: var(--gray-matter);
-    //     font-weight: 600;
-    //     text-decoration: none;
-    // }
 }
 
 .t-search {
@@ -114,23 +145,6 @@
     }
 }
 
-.t-join {
-    margin-top: 1em;
-    padding: .5em 2em .5em .75em;
-    position: relative;
-
-
-    background: var(--blue);
-    border-radius: 8px;
-    color: var(--gray-matter);
-    text-decoration: none;
-
-    &:focus,
-    &:hover {
-        background: scale-color(#455f73, $lightness: -25%)
-    }
-}
-
 .t-toggle {
     padding: .25em .5em;
     width: 100px;
@@ -152,22 +166,5 @@
     }
 
 }
-
-.t-shake {
-    position: absolute;
-    bottom: .5em;
-    right: .25em;
-    transition: transform .2s ease-in-out;
-
-
-}
-
-.t-join:hover .t-shake {
-
-    transform: rotate(15deg);
-
-}
-
-
 
 @import 'card';
