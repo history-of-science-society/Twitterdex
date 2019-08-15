@@ -88,7 +88,7 @@ async function start() {
 
             // Get embed code for latest tweet
             let latestTweetId = await tweetId.then(x => x);
-            let encodedUrl = `https://publish.twitter.com/oembed?omit_script=true?url=https%3A%2F%2Ftwitter.com%2F${obj.handleRaw}%2Fstatus%2F${latestTweetId}`
+            let encodedUrl = `https://publish.twitter.com/oembed?url=https%3A%2F%2Ftwitter.com%2F${obj.handleRaw}%2Fstatus%2F${latestTweetId}`
 
             let latestTweet = await fetch(encodedUrl);
             let latestTweetEmbed = await latestTweet.json();
