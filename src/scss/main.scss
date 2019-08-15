@@ -56,22 +56,21 @@ html {
 }
 
 .t-join {
-    padding: .5em 2em;
+    padding: .5em;
     position: relative;
 
     color: var(--gray-matter);
+    line-height: 1;
     text-decoration: none;
+
+    &:last-child {
+        text-align: right;
+    }
 
     &:focus,
     &:hover {
         background: scale-color(#455f73, $lightness: -25%)
     }
-}
-
-.t-join:hover .t-shake {
-
-    transform: rotate(15deg);
-
 }
 
 .t-header {
