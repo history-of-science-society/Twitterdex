@@ -2,9 +2,10 @@
 
 // Write number of Twitterstorians to the DOM
 var numSpan = document.getElementById('num');
-var numTwitter = document.querySelectorAll('.t-entry');
-numSpan.innerText = numTwitter.length; // Filter DIVS based on text
+var container = document.querySelector('.t-main');
+numSpan.innerText = container.childElementCount; // Filter DIVS based on text
 
+var numTwitter = document.querySelectorAll('.t-entry');
 var searchBox = document.querySelector('.t-search-box');
 var searchResults = document.getElementById('t-search-results');
 searchBox.addEventListener("keyup", function () {
@@ -24,7 +25,8 @@ searchBox.addEventListener("keyup", function () {
 
 function divFilter(input) {
   numTwitter.forEach(function (el) {
-    var userInput = RegExp(input.toLowerCase());
+    var escInput = escapeRegExp(input);
+    var userInput = RegExp(escInput.toLowerCase());
     var src = el.querySelector('.t-name').innerText.toLowerCase();
     var bios = el.querySelector('.t-bio').innerText.toLowerCase();
 
@@ -38,13 +40,16 @@ function divFilter(input) {
   });
 }
 
+function escapeRegExp(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+}
+
 var sortButton = document.getElementById('a-z');
 var twitterArray = [];
 numTwitter.forEach(function (el) {
   return twitterArray.push(el);
 });
 sortButton.addEventListener('click', function () {
-  var container = document.querySelector('.t-main');
   sortButton.classList.toggle('z-a');
 
   if (sortButton.classList.contains('z-a')) {

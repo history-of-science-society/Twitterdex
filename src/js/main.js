@@ -1,11 +1,11 @@
 // Write number of Twitterstorians to the DOM
 const numSpan = document.getElementById('num');
-const numTwitter = document.querySelectorAll('.t-entry');
+const container = document.querySelector('.t-main');
 
-
-numSpan.innerText = numTwitter.length;
+numSpan.innerText = container.childElementCount;
 
 // Filter DIVS based on text
+const numTwitter = document.querySelectorAll('.t-entry');
 const searchBox = document.querySelector('.t-search-box');
 const searchResults = document.getElementById('t-search-results');
 
@@ -22,7 +22,8 @@ searchBox.addEventListener("keyup", () => {
 
 function divFilter(input) {
     numTwitter.forEach(el => {
-        let userInput = RegExp(input.toLowerCase());
+        let escInput = escapeRegExp(input);
+        let userInput = RegExp(escInput.toLowerCase());
         let src = el.querySelector('.t-name').innerText.toLowerCase();
         let bios = el.querySelector('.t-bio').innerText.toLowerCase();
         if (userInput.test(src) || userInput.test(bios)) {
@@ -35,11 +36,16 @@ function divFilter(input) {
     })
 }
 
+function escapeRegExp(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+  }
+
 const sortButton = document.getElementById('a-z');
 const twitterArray = [];
+
+
 numTwitter.forEach(el => twitterArray.push(el));
 sortButton.addEventListener('click', () => {
-    const container = document.querySelector('.t-main');
     sortButton.classList.toggle('z-a');
 
     if (sortButton.classList.contains('z-a')) {
