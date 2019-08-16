@@ -78,7 +78,7 @@ gulp.task('compress', function () {
 
 // File zipper
 gulp.task('zip', function () {
-    return gulp.src('dist/*')
+    return gulp.src('dist/**')
         .pipe(zip('twitterdex.zip'))
         .pipe(gulp.dest('upload'))
 
