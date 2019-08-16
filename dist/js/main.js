@@ -38,11 +38,13 @@ function divFilter(input) {
       el.classList.remove('t-match');
     }
   });
-}
+} // Escape special characters on user input
+
 
 function escapeRegExp(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
-}
+} // Reverse sort by Twitter handle
+
 
 var sortButton = document.getElementById('a-z');
 var twitterArray = [];
@@ -53,8 +55,7 @@ sortButton.addEventListener('click', function () {
   sortButton.classList.toggle('z-a');
 
   if (sortButton.classList.contains('z-a')) {
-    sortButton.innerHTML = 'A&nbsp;&ndash;&nbsp;Z'; // numTwitter.sort()
-
+    sortButton.innerHTML = 'A&nbsp;&ndash;&nbsp;Z';
     twitterArray.sort(function (a, b) {
       var twitA = a.dataset.id.toLowerCase();
       var twitB = b.dataset.id.toLowerCase();
@@ -88,7 +89,8 @@ sortButton.addEventListener('click', function () {
       container.append(el);
     });
   }
-});
+}); // Open and close button for cards
+
 var aboutButtons = document.querySelectorAll('.t-about');
 var closeBioButtons = document.querySelectorAll('.t-bio-close');
 var tweetButtons = document.querySelectorAll('.t-latest');

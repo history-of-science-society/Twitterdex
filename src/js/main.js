@@ -36,13 +36,14 @@ function divFilter(input) {
     })
 }
 
+// Escape special characters on user input
 function escapeRegExp(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
   }
 
+// Reverse sort by Twitter handle
 const sortButton = document.getElementById('a-z');
 const twitterArray = [];
-
 
 numTwitter.forEach(el => twitterArray.push(el));
 sortButton.addEventListener('click', () => {
@@ -50,7 +51,6 @@ sortButton.addEventListener('click', () => {
 
     if (sortButton.classList.contains('z-a')) {
         sortButton.innerHTML = 'A&nbsp;&ndash;&nbsp;Z';
-        // numTwitter.sort()
 
         twitterArray.sort(function (a, b) {
             let twitA = a.dataset.id.toLowerCase();
@@ -92,6 +92,7 @@ sortButton.addEventListener('click', () => {
 
 })
 
+// Open and close button for cards
 const aboutButtons = document.querySelectorAll('.t-about');
 const closeBioButtons = document.querySelectorAll('.t-bio-close');
 const tweetButtons = document.querySelectorAll('.t-latest');
