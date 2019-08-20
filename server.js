@@ -25,6 +25,9 @@ let authors = {
 };
 let newObj = {};
 
+async function delDupes() {
+
+}
 async function start() {
     try {
         let data = [];
@@ -42,6 +45,7 @@ async function start() {
 
         // Access each page of data
         for (set in data) {
+
             // Access individual values
             for (el in data[set]) {
 
