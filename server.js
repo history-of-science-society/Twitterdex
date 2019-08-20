@@ -26,124 +26,126 @@ let authors = {
 let newObj = {};
 
 async function start() {
+    try {
+        let data = [];
+        // Get number of pages of all responses
+        let pageNos = await fetch(`https://www.formstack.com/api/v2/form/${formId}/submission.json?oauth_token=${oauth_token}`)
+            .then(response => response.json())
+            .then(myJson => myJson.pages)
 
-    let data = [];
-    // Get number of pages of all responses
-    let pageNos = await fetch(`https://www.formstack.com/api/v2/form/${formId}/submission.json?oauth_token=${oauth_token}`)
-        .then(response => response.json())
-        .then(myJson => myJson.pages)
+        // Loop through pages to get all responses and them to array
+        for (let i = 1; i <= pageNos; i++) {
+            let raw = await fetch(`https://www.formstack.com/api/v2/form/${formId}/submission.json?page=${i}&data=1&oauth_token=${oauth_token}`)
+            let res = await raw.json();
+            await data.push(res.submissions);
+        }
 
-    // Loop through pages to get all responses and them to array
-    for (let i = 1; i <= pageNos; i++) {
-        let raw = await fetch(`https://www.formstack.com/api/v2/form/${formId}/submission.json?page=${i}&data=1&oauth_token=${oauth_token}`)
-        let res = await raw.json();
-        await data.push(res.submissions);
-    }
+        // Access each page of data
+        for (set in data) {
+            // Access individual values
+            for (el in data[set]) {
 
-    // Access each page of data
-    for (set in data) {
-        // Access individual values
-        for (el in data[set]) {
+                // Construct new Twitterstorian objects for all data
+                let obj = new Twitterstorian(data[set][el].data[73000979].value, data[set][el].data[73000996].value, data[set][el].data[73001016].value, data[set][el].data[73001024].value);
 
-            // Construct new Twitterstorian objects for all data
-            let obj = new Twitterstorian(data[set][el].data[73000979].value, data[set][el].data[73000996].value, data[set][el].data[73001016].value, data[set][el].data[73001024].value);
+                // Get recent Tweets
+                let tweetId = new Promise((resolve, reject) => {
+                    T.get('statuses/user_timeline', {
+                        screen_name: obj.handleRaw
+                    }, function (err, data, response) {
+                        if (!err) {
+                            let tweetId = data[0].id_str;
+                            resolve(tweetId);
+                        } else {
+                            console.log(response);
+                            reject(err, obj.handle);
+                        }
+                    });
+                })
 
+                // Get profile images from Twitter
+                // TODO Combine requests (this and tweetId) into one
+                let profImg = new Promise((resolve, reject) => {
+                    T.get('users/show', {
+                        screen_name: obj.handleRaw
+                    }, function (err, data, response) {
+                        if (!err) {
+                            let image = data.profile_image_url_https;
+                            let biggerImage = image.replace('normal', 'bigger');
+                            resolve(biggerImage);
+                        } else {
+                            reject(err, obj.handle);
+                        }
+                    });
+                })
 
-            // Get recent Tweets
-            let tweetId = new Promise((resolve, reject) => {
-                T.get('statuses/user_timeline', {
-                    screen_name: obj.handle,
-                    count: 1,
-                    include_rts: false
-                }, function (err, data, response) {
-                    if (!err) {
-                        let tweetId = data[0].id_str;
-                        resolve(tweetId);
+                // Set image profile
+                obj.profile = await profImg.then(x => x);
+
+                // Get embed code for latest tweet
+                let latestTweetId = await tweetId.then(x => x);
+                let encodedUrl = `https://publish.twitter.com/oembed?url=https%3A%2F%2Ftwitter.com%2F${obj.handleRaw}%2Fstatus%2F${latestTweetId}`
+
+                let latestTweet = await fetch(encodedUrl);
+                let latestTweetEmbed = await latestTweet.json();
+                obj.htmlEmbed = await latestTweetEmbed.html;
+
+                // Create data context
+                await twitterstorians.push(obj);
+
+                // Sort data by twitter handle
+                await twitterstorians.sort((a, b) => {
+
+                    let handleA = a.handle.toLowerCase();
+                    let handleB = b.handle.toLowerCase();
+
+                    if (handleA < handleB) {
+                        return -1;
+                    } else if (handleA > handleB) {
+                        return 1;
                     } else {
-                        reject(err, obj.handle);
+                        return 0;
                     }
-                });
-            })
+                })
 
-            // Get profile images from Twitter
-            // TODO Combine requests (this and tweetId) into one
-            let profImg = new Promise((resolve, reject) => {
-                T.get('users/show', {
-                    screen_name: obj.handle
-                }, function (err, data, response) {
-                    if (!err) {
-
-                        let image = data.profile_image_url_https;
-                        let biggerImage = image.replace('normal', 'bigger');
-
-                        resolve(biggerImage);
-                    } else {
-                        reject(err, obj.handle);
-                    }
-                });
-            })
-
-            // Set image profile
-            obj.profile = await profImg.then(x => x);
-
-            // Get embed code for latest tweet
-            let latestTweetId = await tweetId.then(x => x);
-            let encodedUrl = `https://publish.twitter.com/oembed?url=https%3A%2F%2Ftwitter.com%2F${obj.handleRaw}%2Fstatus%2F${latestTweetId}`
-
-            let latestTweet = await fetch(encodedUrl);
-            let latestTweetEmbed = await latestTweet.json();
-            obj.htmlEmbed = await latestTweetEmbed.html;
-
-            // Create data context
-            await twitterstorians.push(obj);
-
-            // Sort data by twitter handle
-            await twitterstorians.sort((a, b) => {
-
-                let handleA = a.handle.toLowerCase();
-                let handleB = b.handle.toLowerCase();
-
-                if (handleA < handleB) {
-                    return -1;
-                } else if (handleA > handleB) {
-                    return 1;
-                } else {
-                    return 0;
+                // Create writable data object
+                newObj = await {
+                    authors: twitterstorians
                 }
-            })
 
-            // Create writable data object
-            newObj = await {
-                authors: twitterstorians
             }
-
         }
+
+        // Write the HTML
+        fs.readFile('./src/hbs/index.hbs', function (err, data) {
+            if (!err) {
+                const src = data.toString();
+                const template = Handlebars.compile(src);
+                const html = template(newObj);
+                fs.writeFile('./dist/index.html', html, err => console.log(err));
+            } else {
+                console.log('Error', err)
+            }
+        });
+
+    } catch (error) {
+        console.log(error);
     }
-
-    // Write the HTML
-    fs.readFile('./src/hbs/index.hbs', function (err, data) {
-        if (!err) {
-            const src = data.toString();
-            const template = Handlebars.compile(src);
-            const html = template(newObj);
-            fs.writeFile('./dist/index.html', html, err => console.log(err));
-        } else {
-            console.log('Error', err)
-        }
-    });
 
 }
 
 start();
 
 // Twitterstorian object constructor
-function Twitterstorian(name, affiliation, twitter, bio) {
-    this.name = nameParse(name);
-    this.affiliation = affiliation;
-    this.twitter = twitter;
-    this.bio = bio.substring(0, 144);
-    this.handle = twitterHandle(twitter);
-    this.handleRaw = twitterHandleRaw(twitter);
+class Twitterstorian {
+    constructor(name, affiliation, twitter, bio) {
+        this.name = nameParse(name);
+        this.affiliation = affiliation;
+        this.twitter = twitter;
+        this.bio = (bio.length > 144) ? bio.substring(0, 144) + "..." : bio;
+        this.handle = twitterHandle(twitter);
+        this.handleRaw = twitterHandleRaw(twitter);
+    }
 }
 
 // Name parser

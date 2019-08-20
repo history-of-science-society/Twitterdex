@@ -39,7 +39,7 @@ function divFilter(input) {
 // Escape special characters on user input
 function escapeRegExp(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
-  }
+}
 
 // Reverse sort by Twitter handle
 const sortButton = document.getElementById('a-z');
@@ -101,6 +101,8 @@ aboutButtons.forEach(el => {
     el.addEventListener('click', e => {
         e.target.parentNode.nextSibling.nextSibling.classList.remove('t-card-hide');
         e.target.parentNode.nextSibling.nextSibling.classList.add('t-card-show');
+        e.target.parentNode.style.display = "none";
+        e.target.parentNode.previousElementSibling.style.display = "none";
     })
 });
 
@@ -108,6 +110,8 @@ tweetButtons.forEach(el => {
     el.addEventListener('click', e => {
         e.target.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.classList.remove('t-card-hide');
         e.target.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.classList.add('t-card-show');
+        e.target.parentNode.style.display = "none";
+        e.target.parentNode.previousElementSibling.style.display = "none";
     })
 });
 
@@ -115,5 +119,7 @@ closeBioButtons.forEach(el => {
     el.addEventListener('click', e => {
         e.target.parentNode.classList.remove('t-card-show');
         e.target.parentNode.classList.add('t-card-hide');
+        e.target.parentNode.parentNode.children[1].style.display = "flex";
+        e.target.parentNode.parentNode.children[2].style.display = "flex";
     })
 });

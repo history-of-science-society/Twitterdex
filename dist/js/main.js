@@ -98,17 +98,23 @@ aboutButtons.forEach(function (el) {
   el.addEventListener('click', function (e) {
     e.target.parentNode.nextSibling.nextSibling.classList.remove('t-card-hide');
     e.target.parentNode.nextSibling.nextSibling.classList.add('t-card-show');
+    e.target.parentNode.style.display = "none";
+    e.target.parentNode.previousElementSibling.style.display = "none";
   });
 });
 tweetButtons.forEach(function (el) {
   el.addEventListener('click', function (e) {
     e.target.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.classList.remove('t-card-hide');
     e.target.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.classList.add('t-card-show');
+    e.target.parentNode.style.display = "none";
+    e.target.parentNode.previousElementSibling.style.display = "none";
   });
 });
 closeBioButtons.forEach(function (el) {
   el.addEventListener('click', function (e) {
     e.target.parentNode.classList.remove('t-card-show');
     e.target.parentNode.classList.add('t-card-hide');
+    e.target.parentNode.parentNode.children[1].style.display = "flex";
+    e.target.parentNode.parentNode.children[2].style.display = "flex";
   });
 });

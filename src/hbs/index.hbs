@@ -65,7 +65,7 @@
             <main class="t-main">
 
                 {{#each authors}}
-                <article class="t-entry" data-id="{{handle}}">
+                <article id="{{handleRaw}}" class="t-entry" data-id="{{handleRaw}}">
                     <div class="t-circle-set">
                         <div class="t-circle"></div>
                         <div class="t-circle"></div>
@@ -81,19 +81,19 @@
                         </div>
                     </header>
                     <footer class="t-footer">
-                        <button class="t-button t-about">About</button>
-                        <button class="t-button t-latest">Recent Tweet</button>
+                        <button aria-controls="about-{{handleRaw}}" class="t-button t-about">About</button>
+                        <button aria-controls="lt-{{handleRaw}}" class="t-button t-latest">Recent Tweet</button>
                         <a class="t-button t-follow" href="{{twitter}}" target="_blank" rel="no-opener">Follow</a>
                     </footer>
 
-                    <div class="t-bio">
+                    <div id="about-{{handleRaw}}" class="t-bio">
                         <button class="t-bio-close" aria-label="Close"></button>
                         <p class="t-bio-name">{{name}}</p>
                         <p class="t-bio-affiliation">{{affiliation}}</p>
                         <p>{{bio}}</p>
                     </div>
 
-                    <div class="t-tweet">
+                    <div id="lt-{{handleRaw}}" class="t-tweet">
                         <button class="t-bio-close" aria-label="Close"></button>
                         {{{htmlEmbed}}}
                     </div>

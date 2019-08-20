@@ -77,9 +77,8 @@ gulp.task('compress', function () {
 });
 
 // File zipper
-gulp.task('zip', function () {
+gulp.task('zip', () => {
     return gulp.src('dist/**')
         .pipe(zip('twitterdex.zip'))
         .pipe(gulp.dest('upload'))
-
 });
