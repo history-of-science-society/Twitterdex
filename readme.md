@@ -1,4 +1,4 @@
-![](https://digital.hssonline.org/wp-content/uploads/2019/08/Twitterdex-Meta-Tag-Image-2019-08.jpg)
+![](https://digital.hssonline.org/wp-content/uploads/2019/08/Twitterdex-Meta-Tag-Image-2019-08.jpg =300px)
 
 # History of Science Society Twitterdex
 A crowd-sourced directory of history of science Twitterstorians
