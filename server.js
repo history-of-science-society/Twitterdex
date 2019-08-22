@@ -40,6 +40,7 @@ async function start() {
         for (let i = 1; i <= pageNos; i++) {
             let raw = await fetch(`https://www.formstack.com/api/v2/form/${formId}/submission.json?page=${i}&data=1&oauth_token=${oauth_token}`)
             let res = await raw.json();
+            console.log('\x1b[32m', `Fetching form responses from the database (${i} of ${pageNos})...`);
             await data.push(res.submissions);
         }
 
@@ -51,6 +52,8 @@ async function start() {
 
                 // Construct new Twitterstorian objects for all data
                 let obj = new Twitterstorian(data[set][el].data[73000979].value, data[set][el].data[73000996].value, data[set][el].data[73001016].value, data[set][el].data[73001024].value);
+
+                console.log('\x1b[32m', `Constructing object and fetching data for ${obj.name}`);
 
                 // Get recent Tweets
                 let tweetId = new Promise((resolve, reject) => {
@@ -123,6 +126,7 @@ async function start() {
         // Write the HTML
         fs.readFile('./src/hbs/index.hbs', function (err, data) {
             if (!err) {
+                console.log('\x1b[32m', `Creating new HSS Twitterdex. A Crowd-Sourced Directory of History of Science Twitterstorians. Now with ${twitterstorians.length} Twitterstorians. Have a great day! 😄`);
                 const src = data.toString();
                 const template = Handlebars.compile(src);
                 const html = template(newObj);
