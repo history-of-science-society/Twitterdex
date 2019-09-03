@@ -41,57 +41,6 @@ function escapeRegExp(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
 }
 
-// Reverse sort by Twitter handle
-const sortButton = document.getElementById('a-z');
-const twitterArray = [];
-
-numTwitter.forEach(el => twitterArray.push(el));
-sortButton.addEventListener('click', () => {
-    sortButton.classList.toggle('z-a');
-
-    if (sortButton.classList.contains('z-a')) {
-        sortButton.innerHTML = 'A&nbsp;&ndash;&nbsp;Z';
-
-        twitterArray.sort(function (a, b) {
-            let twitA = a.dataset.id.toLowerCase();
-            let twitB = b.dataset.id.toLowerCase();
-
-            if (twitA > twitB) {
-                return -1;
-            } else if (twitA < twitB) {
-                return 1;
-            } else {
-                return 0;
-            }
-        })
-
-        twitterArray.forEach(el => {
-            container.append(el);
-        })
-
-    } else {
-        sortButton.innerHTML = 'Z&nbsp;&ndash;&nbsp;A';
-
-        twitterArray.sort(function (a, b) {
-            let twitA = a.dataset.id.toLowerCase();
-            let twitB = b.dataset.id.toLowerCase();
-
-            if (twitA < twitB) {
-                return -1;
-            } else if (twitA > twitB) {
-                return 1;
-            } else {
-                return 0;
-            }
-        })
-
-        twitterArray.forEach(el => {
-            container.append(el);
-        })
-    }
-
-})
-
 // Open and close button for cards
 const aboutButtons = document.querySelectorAll('.t-about');
 const closeBioButtons = document.querySelectorAll('.t-bio-close');
