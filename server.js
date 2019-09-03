@@ -119,7 +119,8 @@ async function start() {
                 newObj = await {
                     authors: twitterstorians
                 }
-                newObj = await {total: twitterstorians.length}
+                newObj.total = await twitterstorians.length;
+
 
 
             }
