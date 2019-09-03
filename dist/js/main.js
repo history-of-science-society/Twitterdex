@@ -1,10 +1,6 @@
 "use strict";
 
-// Write number of Twitterstorians to the DOM
-var numSpan = document.getElementById('num');
-var container = document.querySelector('.t-main');
-numSpan.innerText = container.childElementCount; // Filter DIVS based on text
-
+// Filter DIVS based on text
 var numTwitter = document.querySelectorAll('.t-entry');
 var searchBox = document.querySelector('.t-search-box');
 var searchResults = document.getElementById('t-search-results');
