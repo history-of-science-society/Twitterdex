@@ -7,7 +7,19 @@ const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const babel = require('gulp-babel');
 const zip = require('gulp-zip');
+const rev = require('gulp-rev');
+const inject = require('gulp-inject');
 
+// Inject
+gulp.task('inject', function () {
+    let target = gulp.src('dist/index.html');
+    let sources = gulp.src(['dist/css/*.css', 'dist/js/*.js'], {
+        read: false
+    });
+
+    return target.pipe(inject(sources))
+        .pipe(gulp.dest('dist'));
+})
 
 // Watch
 gulp.task('watch', function () {
@@ -23,6 +35,7 @@ gulp.task('css', function () {
         .pipe(cleanCSS({
             compatibility: 'ie8'
         }))
+        .pipe(rev())
         .pipe(gulp.dest('dist/css'));
 })
 
@@ -33,6 +46,7 @@ gulp.task('js', function () {
             presets: ['@babel/env']
         }))
         .pipe(minify())
+        .pipe(rev())
         .pipe(gulp.dest('dist/js'))
 })
 
