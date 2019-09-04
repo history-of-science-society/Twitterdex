@@ -133,7 +133,7 @@ async function start() {
                 const src = data.toString();
                 const template = Handlebars.compile(src);
                 const html = template(newObj);
-                fs.writeFile('./dist/index.html', html, err => console.log(err));
+                fs.writeFile('./twitterdex/index.html', html, err => console.log(err));
             } else {
                 console.log('Error', err)
             }

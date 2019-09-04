@@ -12,13 +12,12 @@ const inject = require('gulp-inject');
 
 // Inject
 gulp.task('inject', function () {
-    let target = gulp.src('dist/index.html');
-    let sources = gulp.src(['dist/css/*.css', 'dist/js/*.js'], {
-        read: false
-    });
+    let target = gulp.src('twitterdex/index.html');
+    let sources = gulp.src(['twitterdex/css/*.css', 'twitterdex/js/*.js'], {
+        read: false});
 
     return target.pipe(inject(sources))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('./twitterdex/'));
 })
 
 // Watch
@@ -36,7 +35,7 @@ gulp.task('css', function () {
             compatibility: 'ie8'
         }))
         .pipe(rev())
-        .pipe(gulp.dest('dist/css'));
+        .pipe(gulp.dest('twitterdex/css'));
 })
 
 // JS Runner
@@ -45,9 +44,11 @@ gulp.task('js', function () {
         .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(minify())
+        .pipe(minify({
+            noSource: true
+        }))
         .pipe(rev())
-        .pipe(gulp.dest('dist/js'))
+        .pipe(gulp.dest('twitterdex/js'))
 })
 
 
@@ -64,15 +65,15 @@ gulp.task('autoprefix', () =>
         browsers: ['last 2 versions'],
         cascade: false
     }))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('twitterdex/css'))
 );
 
 gulp.task('minify-css', () => {
-    return gulp.src('dist/css/*.css')
+    return gulp.src('twitterdex/css/*.css')
         .pipe(cleanCSS({
             compatibility: 'ie8'
         }))
-        .pipe(gulp.dest('dist/css/min'));
+        .pipe(gulp.dest('twitterdex/css/min'));
 });
 
 // JS tasks
@@ -81,18 +82,18 @@ gulp.task('babel', () =>
     .pipe(babel({
         presets: ['@babel/env']
     }))
-    .pipe(gulp.dest('dist/js'))
+    .pipe(gulp.dest('twitterdex/js'))
 );
 
 gulp.task('compress', function () {
-    gulp.src('dist/js/*.js')
+    gulp.src('twitterdex/js/*.js')
         .pipe(minify())
-        .pipe(gulp.dest('dist/js/min'))
+        .pipe(gulp.dest('twitterdex/js/min'))
 });
 
 // File zipper
 gulp.task('zip', () => {
-    return gulp.src('dist/**')
+    return gulp.src('twitterdex/**')
         .pipe(zip('twitterdex.zip'))
         .pipe(gulp.dest('upload'))
 });
