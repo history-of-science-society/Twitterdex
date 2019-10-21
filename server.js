@@ -98,13 +98,12 @@ async function start() {
                 obj.htmlEmbed = await latestTweetEmbed.html;
 
                 // Create data context
-                await twitterstorians.push(obj);
+                twitterstorians.push(obj);
 
                 // Sort data by twitter handle
-                await twitterstorians.sort((a, b) => {
-
-                    let handleA = a.handle.toLowerCase();
-                    let handleB = b.handle.toLowerCase();
+                twitterstorians.sort((a, b) => {
+                    let handleA = a.rando;
+                    let handleB = b.rando;
 
                     if (handleA < handleB) {
                         return -1;
@@ -116,10 +115,10 @@ async function start() {
                 })
 
                 // Create writable data object
-                newObj = await {
+                newObj = {
                     authors: twitterstorians
                 }
-                newObj.total = await twitterstorians.length;
+                newObj.total = twitterstorians.length;
 
 
 
@@ -156,6 +155,7 @@ class Twitterstorian {
         this.bio = (bio.length > 144) ? bio.substring(0, 144) + "..." : bio;
         this.handle = twitterHandle(twitter);
         this.handleRaw = twitterHandleRaw(twitter);
+        this.rando = Math.random();
     }
 }
 
