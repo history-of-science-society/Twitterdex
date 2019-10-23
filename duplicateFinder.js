@@ -28,9 +28,9 @@ async function start() {
 
     // Checks for duplicates. Works because indexOf returns the first index of item. So, if there are two of the same item, one will not equal that index. In this case, the duplicate that is flagged will be the older one (and likely the one to be deleted) because its index will not equal that of the newer one, which will be returned by indexOf
     let duplicates = urlCheck.filter((item, index) => urlCheck.indexOf(item) != index);
-    let dupeIndexArr = [];
 
-    // The problem with the duplicate finder is that it is restricted in this form to dealing with arrays, so it can't return additional data about the item. So, here I recreate an array of objects that include info useful for pointing out which entries are duplicates. In the future, deletion could be automated by making a request to the server to delete these entries. For now they are just logged to the console.
+    // The problem with the duplicate finder is that it is restricted in this form to dealing with arrays, so it can't return additional data about the item. So, here I recreate an array of objects that includes info useful for pointing out which entries are duplicates. In the future, deletion could be automated by making a request to the server to delete these entries. For now they are just logged to the console.
+    let dupeIndexArr = [];
     duplicates.forEach(item => {
         const index = urlCheck.indexOf(item);
         const id = flattenedArr[index].id;
@@ -46,7 +46,7 @@ async function start() {
     })
 
     if (dupeIndexArr.length === 0) {
-        console.log('No duplicates found! 👍');
+        console.log('No duplicates found!');
     } else {
         console.log(dupeIndexArr);
     }
