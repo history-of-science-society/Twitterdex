@@ -18,11 +18,18 @@ const T = new Twit({
 const formId = '3315786';
 const oauth_token = process.env.API_FS;
 
+// Flag for duplicate status
+let duplicateStatus = false;
+
 function getPageNos() {
-    return new Promise(resolve => {
-        fetch(`https://www.formstack.com/api/v2/form/${formId}/submission.json?oauth_token=${oauth_token}`)
-            .then(response => response.json())
-            .then(myJson => resolve(myJson.pages))
+    return new Promise((resolve, reject) => {
+        try {
+            fetch(`https://www.formstack.com/api/v2/form/${formId}/submission.json?oauth_token=${oauth_token}`)
+                .then(response => response.json())
+                .then(myJson => resolve(myJson.pages))
+        } catch (error) {
+            reject(console.log(error))
+        }
     })
 }
 
@@ -66,14 +73,24 @@ function checkForDuplicates(data) {
 }
 
 async function deleteDuplicates(usersToDelete) {
-    return new Promise((resolve, reject) => {
+
+    try {
         if (usersToDelete !== 0) {
-            //do deletion
-            resolve('duplicatesDeleted')
+            const deleted = [];
+            for (users in usersToDelete) {
+                const res = await fetch(`https://www.formstack.com/api/v2/submission/${usersToDelete[users].id}.json?oauth_token=${oauth_token}`, {
+                    method: 'delete'
+                })
+                console.log(res)
+                deleted.push(res);
+            }
+            return deleted;
         } else {
-            resolve(true)
+            return false;
         }
-    })
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 function getTwitterData(userData) {
@@ -85,9 +102,19 @@ function getTwitterEmbedCode(tweetId) {
 }
 
 async function createTwitterdex() {
-    const numberOfPages = await getPageNos();
-    const data = await getFormData(numberOfPages);
-    const duplicates = checkForDuplicates(data);
+    if (!duplicateStatus) {
+        console.log('initial check');
+        const numberOfPages = await getPageNos();
+        const data = await getFormData(numberOfPages);
+        const duplicates = checkForDuplicates(data);
+        const duplicatesDeleted = await deleteDuplicates(duplicates);
+        duplicateStatus = true;
+        createTwitterdex();
+    } else {
+        console.log('second check');
+        const numberOfPages = await getPageNos();
+        const data = await getFormData(numberOfPages);
+    }
 
 }
 
