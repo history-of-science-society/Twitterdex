@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const fetch = require('node-fetch');
 const fs = require('fs');
 const Handlebars = require('handlebars');
@@ -28,7 +29,7 @@ function getPageNos() {
                 .then(response => response.json())
                 .then(myJson => resolve(myJson.pages))
         } catch (error) {
-            reject(console.log(error))
+            reject(console.error(error))
         }
     })
 }
@@ -76,20 +77,19 @@ async function deleteDuplicates(usersToDelete) {
 
     try {
         if (usersToDelete !== 0) {
-            const deleted = [];
+            let deleted = '';
             for (users in usersToDelete) {
                 const res = await fetch(`https://www.formstack.com/api/v2/submission/${usersToDelete[users].id}.json?oauth_token=${oauth_token}`, {
                     method: 'delete'
                 })
-                console.log(res)
-                deleted.push(res);
+                deleted += `${usersToDelete[users].name} (${usersToDelete[users].id}) `;
             }
             return deleted;
         } else {
-            return false;
+            return 'Nothing to delete';
         }
     } catch (error) {
-        console.log(error);
+        console.error(error);
     }
 }
 
@@ -103,15 +103,16 @@ function getTwitterEmbedCode(tweetId) {
 
 async function createTwitterdex() {
     if (!duplicateStatus) {
-        console.log('initial check');
+        console.log(chalk.yellow.bold('The Twitterdex is performing its initial checks...'));
         const numberOfPages = await getPageNos();
         const data = await getFormData(numberOfPages);
         const duplicates = checkForDuplicates(data);
         const duplicatesDeleted = await deleteDuplicates(duplicates);
+        console.log(chalk.black.bgRed.bold(duplicatesDeleted));
         duplicateStatus = true;
         createTwitterdex();
     } else {
-        console.log('second check');
+        console.log(chalk.green.bold('Initial checks complete. The Twitterdex will now fetch data for all Twitterstorians...'));
         const numberOfPages = await getPageNos();
         const data = await getFormData(numberOfPages);
     }
