@@ -21,16 +21,19 @@
     </script>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>HSS Twitterdex</title>
-    <meta name="description" content="A Crowd-Sourced Directory of"
-    {{
-      total
-    }}" History of Science Twitterstorians">
+    <title>
+      HSS Twitterdex
+    </title>
+    <meta
+      name="description"
+      content="A Crowd-Sourced Directory of
+      {{total}} History of Science Twitterstorians"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- inject:css -->
     <!-- endinject -->
-
-    {{!-- Social Meta Tags --}}
+    <link rel="preconnect" href="https://pbs.twimg.com" />
+    {{! Social Meta Tags }}
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -40,10 +43,11 @@
     />
     <meta name="twitter:site" content="@hssonline" />
     <meta name="twitter:title" content="HSS Twitterdex" />
-    <meta name="twitter:description" content="A Crowd-Sourced Directory of
-    {{
-      total
-    }} History of Science Twitterstorians">
+    <meta
+      name="twitter:description"
+      content="A Crowd-Sourced Directory of
+      {{total}} History of Science Twitterstorians"
+    />
     <meta name="twitter:creator" content="@hssonline" />
 
     <!-- Open Graph data -->
@@ -57,13 +61,14 @@
       property="og:image"
       content="https://digital.hssonline.org/wp-content/uploads/2019/08/Twitterdex-Meta-Tag-Image-2019-08.jpg"
     />
-    <meta property="og:description" content="A Crowd-Sourced Directory of
-    {{
-      total
-    }} History of Science Twitterstorians" />
+    <meta
+      property="og:description"
+      content="A Crowd-Sourced Directory of
+      {{total}} History of Science Twitterstorians"
+    />
     <meta property="og:site_name" content="History of Science Society" />
     <meta property="fb:admins" content="77247831395" />
-    {{!-- Favicon --}}
+    {{! Favicon }}
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -92,83 +97,51 @@
       </p>
     <![endif]-->
     <nav class="t-nav">
-      <a href="https://digital.hssonline.org" class="t-link t-join"
-        >👈&nbsp;digital.hssonline</a
-      ><a
+      <a href="https://digital.hssonline.org" class="t-link t-join">
+        👈&nbsp;digital.hssonline
+      </a>
+      <a
         class="t-join"
         href="https://hssonline.formstack.com/forms/twitterdex"
         target="_blank"
         rel="noopener"
-        >Join the Twitterdex&nbsp;🎉</a
       >
+        Join the Twitterdex&nbsp;🎉
+      </a>
     </nav>
     <main class="t-bg">
-        <header class="t-header">
-          <h1>History of Science Society Twitterdex</h1>
-          <p>
-            A Crowd-Sourced Directory of
-            <span id="num" style="font-weight: 900;">{{ total }}</span> History
+      <header class="t-header">
+        <h1>
+          History of Science Society Twitterdex
+        </h1>
+        <p>
+          A Crowd-Sourced Directory of
+          <span id="num" style="font-weight: 900;">
+            {{total}}
+          </span>
+          History
             of Science Twitterstorians
-          </p>
-        </header>
-        <div class="t-main">
-          {{#each authors}}
-          <article
-            id="{{ handleRaw }}"
-            class="t-entry"
-            data-id="{{ handleRaw }}"
-          >
-            <div class="t-circle-set">
-              <div class="t-circle"></div>
-              <div class="t-circle"></div>
-            </div>
-            <header class="t-top">
-              <a
-                aria-label="Twitter page of {{ name }}"
-                class="t-image-link"
-                href="{{ twitter }}"
-                ><img class="t-image" src="{{ profile }}" alt=""
-              /></a>
-
-              <div class="t-body">
-                <h2 class="t-name">{{ name }}</h2>
-                <a
-                  aria-label="Twitter page of {{ name }}"
-                  class="t-handle"
-                  href="{{ twitter }}"
-                  ><img
-                    src="https://digital.hssonline.org/wp-content/uploads/2019/08/twitter.svg"
-                    alt=""
-                  />
-                  <p>{{ handle }}</p>
-                </a>
-              </div>
-            </header>
-            <footer class="t-footer">
-              <button
-                aria-controls="about-{{ handleRaw }}"
-                class="t-button t-about"
-              >
-                About
-              </button>
-              <a class="t-button t-follow" href="{{ twitter }}">Follow</a>
-            </footer>
-            <div id="about-{{ handleRaw }}" class="t-bio">
-              <button class="t-bio-close" aria-label="Close"></button>
-              <p class="t-bio-name">{{ name }}</p>
-              <p class="t-bio-affiliation">{{ affiliation }}</p>
-              <p>{{ bio }}</p>
-            </div>
-          </article>
-          {{/each}}
-        </div>
+        </p>
+      </header>
+      <ul class="t-main">
+        {{#each authors}}
+          <li id="{{handleRaw}}" class="t-entry" data-id="{{handleRaw}}">
+            <a
+              aria-label="Twitter page of {{name}}"
+              class="t-image-link"
+              href="{{twitter}}"
+            >
+              <img class="t-image" src="{{profile}}" loading="lazy" alt="" />
+              <h2 class="t-name">
+                {{name}}
+              </h2>
+              <p>
+                {{handle}}
+              </p>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
     </main>
-    <!-- inject:js -->
-    <!-- endinject -->
-    {{!-- <script
-      async
-      src="https://platform.twitter.com/widgets.js"
-      charset="utf-8"
-    ></script> --}}
   </body>
 </html>
