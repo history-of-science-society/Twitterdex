@@ -1,169 +1,153 @@
-
 $blue: #455f73;
 $light-blue: #a9c3d7;
 $gray-matter: #f7f7ef;
 $black: #17170c;
 $manuscript: #ffffd7;
-$volta: #b2b247;
-$hss: #666633;
-
-$box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-0 3px 6px rgba(0, 0, 0, 0.23);
+$volta: hsl(60, 13%, 93%);
+$hss: hsl(60, 13%, 93%);
+$box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 html {
-    background: $hss;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1em;
-    line-height: 1.6;
+  background: $hss;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
 }
 
 @media all and (min-width: 864px) {
-    html {
-        font-size: 1.2em;
-    }
+  html {
+    font-size: 1.2em;
+  }
 }
 
 .t-bg {
-    margin: 0 auto;
-    max-width: calc(864px + 1em);
-    padding: 1em;
-
-    background: $gray-matter;
+  margin: 0 auto;
+  max-width: 864px;
 }
 
 .t-container {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 50px;
-
-    background: $volta;
-    margin: 0 auto;
-    max-width: 864px;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1em 50px;
+  background: $volta;
+  margin: 0 auto;
+  max-width: 864px;
+  min-height: 100vh;
 }
 
 .t-nav {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 
-    background: $blue;
+  background: $blue;
 }
 
 .t-join {
-    padding: .5em;
-    position: relative;
+  padding: 0.5em;
+  position: relative;
 
-    color: $gray-matter;
-    line-height: 1;
-    text-decoration: none;
+  color: $gray-matter;
+  line-height: 1;
+  text-decoration: none;
 
-    &:last-child {
-        text-align: right;
-    }
+  &:last-child {
+    text-align: right;
+  }
 
-    &:focus,
-    &:hover {
-        background: scale-color(#455f73, $lightness: -25%)
-    }
+  &:focus,
+  &:hover {
+    background: scale-color(#455f73, $lightness: -25%);
+  }
 }
 
 .t-header {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 25px;
-    margin-bottom: 0;
-    padding: 2em;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 25px 0;
+  padding: 2em;
 
-    background: $gray-matter;
-    border: 1px solid $black;
-    border-radius: 8px;
-    box-shadow: $box-shadow;
+  background: $gray-matter;
+  border: 1px solid $black;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
 
-    h1 {
-        font-family: 'Adobe Garamond Pro', 'Hoefler', Georgia, 'Times New Roman', Times, serif;
-        font-size: 2.5em;
-        margin-block-end: .25em;
-        margin-block-start: .25em;
+  h1 {
+    font-family: "Adobe Garamond Pro", "Hoefler", Georgia, "Times New Roman",
+      Times, serif;
+    font-size: 2.5em;
+    margin-block-end: 0.25em;
+    margin-block-start: 0.25em;
 
-        line-height: 1.1;
-        text-align: center;
-    }
+    line-height: 1.1;
+    text-align: center;
+  }
 
-    p {
-        font-size: 1.2em;
-        margin-block-end: .25em;
-        margin-block-start: 0;
-    }
-
+  p {
+    font-size: 1.2em;
+    margin-block-end: 0.25em;
+    margin-block-start: 0;
+  }
 }
 
 .t-search {
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    padding: 2em 1em;
-    margin: 2em 0;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  padding: 2em 1em;
+  margin: 2em 0;
 
-    background: #666633;
-    color: $gray-matter
-}
-
-.t-search-container {
-    align-items: center;
-    display: flex;
-    flex: 1;
-
+  background: $hss;
+  color: #000000;
 }
 
 .t-search-box {
-    border: none;
-    border-bottom: 1px solid $volta;
-    color: $gray-matter;
-    margin: 0 10px 0 25px;
-    width: 75%;
-    // padding: 5px .5em;
+  display: flex;
+  border: none;
+  border-bottom: 1px solid #000000;
+  color: #000000;
+  margin: 0;
+  background: $hss;
+  font-size: 1em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  outline: none;
 
-
-    background: #666633;
-    font-size: 1em;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    outline: none;
-
-    &::placeholder {
-        color: #ddd;
-        text-transform: uppercase;
-        font-size: small;
-    }
+  &::placeholder {
+    color: #333333;
+    text-transform: uppercase;
+    font-size: small;
+  }
 }
 
 .t-toggle {
-    padding: .25em .5em;
-    width: 100px;
+  padding: 0.25em 0.5em;
+  width: 100px;
 
-    background: $gray-matter;
-    border: 1px solid $black;
-    border-radius: 8px;
-    box-shadow: $box-shadow;
-    color: $black;
-    cursor: pointer;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1em;
-    transition: transform 0.6s ease-out;
-    outline: none;
+  background: $gray-matter;
+  border: 1px solid $black;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+  color: $black;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  transition: transform 0.6s ease-out;
+  outline: none;
 
-    &:focus,
-    &:hover {
-        background: scale-color(#f7f7ef, $lightness: -25%)
-    }
-
+  &:focus,
+  &:hover {
+    background: scale-color(#f7f7ef, $lightness: -25%);
+  }
 }
 
-@import 'card';
+@import "card";

@@ -4,120 +4,173 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html lang="en">
-<!--<![endif]-->
-
-<head>
+  <!--<![endif]-->
+  <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5101015-2"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-5101015-2"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-5101015-2');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-5101015-2");
     </script>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>HSS Twitterdex</title>
-    <meta name="description" content="A Crowd-Sourced Directory of History of Science Twitterstorians">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A Crowd-Sourced Directory of"
+    {{
+      total
+    }}" History of Science Twitterstorians">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- inject:css -->
     <!-- endinject -->
 
     {{!-- Social Meta Tags --}}
 
     <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image"
-        content="https://digital.hssonline.org/wp-content/uploads/2019/08/Twitterdex-Meta-Tag-Image-2019-08.jpg">
-    <meta name="twitter:site" content="@hssonline">
-    <meta name="twitter:title" content="HSS Twitterdex">
-    <meta name="twitter:description" content="A Crowd-Sourced Directory of History of Science Twitterstorians">
-    <meta name="twitter:creator" content="@hssonline">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://digital.hssonline.org/wp-content/uploads/2019/08/Twitterdex-Meta-Tag-Image-2019-08.jpg"
+    />
+    <meta name="twitter:site" content="@hssonline" />
+    <meta name="twitter:title" content="HSS Twitterdex" />
+    <meta name="twitter:description" content="A Crowd-Sourced Directory of"
+    {{
+      total
+    }}" History of Science Twitterstorians">
+    <meta name="twitter:creator" content="@hssonline" />
 
     <!-- Open Graph data -->
     <meta property="og:title" content="HSS Twitterdex" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://digital.hssonline.org/twitterdex/" />
-    <meta property="og:image"
-        content="https://digital.hssonline.org/wp-content/uploads/2019/08/Twitterdex-Meta-Tag-Image-2019-08.jpg" />
-    <meta property="og:description" content="A Crowd-Sourced Directory of History of Science Twitterstorians" />
+    <meta
+      property="og:url"
+      content="https://digital.hssonline.org/twitterdex/"
+    />
+    <meta
+      property="og:image"
+      content="https://digital.hssonline.org/wp-content/uploads/2019/08/Twitterdex-Meta-Tag-Image-2019-08.jpg"
+    />
+    <meta property="og:description" content="A Crowd-Sourced Directory of"
+    {{
+      total
+    }}" History of Science Twitterstorians" />
     <meta property="og:site_name" content="History of Science Society" />
     <meta property="fb:admins" content="77247831395" />
+    {{!-- Favicon --}}
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/twitterdex/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/twitterdex/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/twitterdex/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/twitterdex/site.webmanifest" />
+  </head>
 
-</head>
+  <body>
+    <!--[if lt IE 11]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <nav class="t-nav">
+      <a href="https://digital.hssonline.org" class="t-link t-join"
+        >👈&nbsp;digital.hssonline</a
+      ><a
+        class="t-join"
+        href="https://hssonline.formstack.com/forms/twitterdex"
+        target="_blank"
+        rel="noopener"
+        >Join the Twitterdex&nbsp;🎉</a
+      >
+    </nav>
+    <main class="t-bg">
+      <div class="t-container">
+        <header class="t-header">
+          <h1>History of Science Society Twitterdex</h1>
+          <p>
+            A Crowd-Sourced Directory of
+            <span id="num" style="font-weight: 900;">{{ total }}</span> History
+            of Science Twitterstorians
+          </p>
+        </header>
+        <div class="t-main">
+          {{#each authors}}
+          <article
+            id="{{ handleRaw }}"
+            class="t-entry"
+            data-id="{{ handleRaw }}"
+          >
+            <div class="t-circle-set">
+              <div class="t-circle"></div>
+              <div class="t-circle"></div>
+            </div>
+            <header class="t-top">
+              <a
+                aria-label="Twitter page of {{ name }}"
+                class="t-image-link"
+                href="{{ twitter }}"
+                ><img class="t-image" src="{{ profile }}" alt=""
+              /></a>
 
-<body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <div class="t-bg">
-        <div class="t-container">
-            <nav class="t-nav"><a href="https://digital.hssonline.org"
-                    class="t-link t-join">👈&nbsp;digital.hssonline</a><a class="t-join"
-                    href="https://hssonline.formstack.com/forms/twitterdex" target="_blank" rel="noopener">Join the
-                    Twitterdex&nbsp;🎉</a></nav>
-            <header class="t-header">
-                <h1>History of Science Society Twitterdex</h1>
-                <p>A Crowd-Sourced Directory of <span id="num" style="font-weight: 900">{{total}}</span> History of
-                    Science
-                    Twitterstorians</p>
+              <div class="t-body">
+                <h2 class="t-name">{{ name }}</h2>
+                <a
+                  aria-label="Twitter page of {{ name }}"
+                  class="t-handle"
+                  href="{{ twitter }}"
+                  ><img
+                    src="https://digital.hssonline.org/wp-content/uploads/2019/08/twitter.svg"
+                    alt=""
+                  />
+                  <p>{{ handle }}</p>
+                </a>
+              </div>
             </header>
-
-            <section class="t-search">
-                <div class="t-search-container">
-                    <input aria-label="search box" type="text" class="t-search-box"
-                        placeholder="Begin typing to search..." autofocus>
-                    <span id="t-search-results"></span>
-                </div>
-            </section>
-
-            <main class="t-main">
-
-                {{#each authors}}
-                <article id="{{handleRaw}}" class="t-entry" data-id="{{handleRaw}}">
-                    <div class="t-circle-set">
-                        <div class="t-circle"></div>
-                        <div class="t-circle"></div>
-                    </div>
-                    <header class="t-top">
-                        <a aria-label="Twitter page of {{name}}" class="t-image-link" href="{{twitter}}"><img
-                                class="t-image" src="{{profile}}" alt=""></a>
-                        <div class="t-body">
-                            <h2 class="t-name">{{name}}</h2>
-                            <a aria-label="Twitter page of {{name}}" class="t-handle" href="{{twitter}}"><img
-                                    src="https://digital.hssonline.org/wp-content/uploads/2019/08/twitter.svg" alt="">
-                                <p>{{handle}}</p>
-                            </a>
-                        </div>
-                    </header>
-                    <footer class="t-footer">
-                        <button aria-controls="about-{{handleRaw}}" class="t-button t-about">About</button>
-                        <button aria-controls="lt-{{handleRaw}}" class="t-button t-latest">Recent Tweet</button>
-                        <a class="t-button t-follow" href="{{twitter}}">Follow</a>
-                    </footer>
-
-                    <div id="about-{{handleRaw}}" class="t-bio">
-                        <button class="t-bio-close" aria-label="Close"></button>
-                        <p class="t-bio-name">{{name}}</p>
-                        <p class="t-bio-affiliation">{{affiliation}}</p>
-                        <p>{{bio}}</p>
-                    </div>
-
-                    <div id="lt-{{handleRaw}}" class="t-tweet">
-                        <button class="t-bio-close" aria-label="Close"></button>
-                        {{{htmlEmbed}}}
-                    </div>
-                </article>
-                {{/each}}
-
-            </main>
+            <footer class="t-footer">
+              <button
+                aria-controls="about-{{ handleRaw }}"
+                class="t-button t-about"
+              >
+                About
+              </button>
+              <a class="t-button t-follow" href="{{ twitter }}">Follow</a>
+            </footer>
+            <div id="about-{{ handleRaw }}" class="t-bio">
+              <button class="t-bio-close" aria-label="Close"></button>
+              <p class="t-bio-name">{{ name }}</p>
+              <p class="t-bio-affiliation">{{ affiliation }}</p>
+              <p>{{ bio }}</p>
+            </div>
+          </article>
+          {{/each}}
         </div>
-    </div>
+      </div>
+    </main>
     <!-- inject:js -->
     <!-- endinject -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</body>
-
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
+  </body>
 </html>
