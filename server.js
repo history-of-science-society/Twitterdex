@@ -171,7 +171,7 @@ class Twitterstorian {
     this.name = nameParse(name);
     this.affiliation = affiliation;
     this.twitter = twitter;
-    this.bio = bio.length > 144 ? bio.substring(0, 144) + "..." : bio;
+    this.bio = bio;
     this.handle = twitterHandle(twitter);
     this.handleRaw = twitterHandleRaw(twitter);
     this.rando = Math.random();

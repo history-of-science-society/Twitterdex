@@ -125,13 +125,13 @@
       </header>
       <ul class="t-main">
         {{#each authors}}
-          <li id="{{handleRaw}}" class="t-entry" data-id="{{handleRaw}}" data-bio="{{bio}}" data-tweet="{{htmlEmbed}}" data-affiliation="{{affiliation}}">
-            <a
+          <li id="{{handleRaw}}" class="t-entry" data-name="{{name}}" data-bio="{{bio}}" data-tweet="{{htmlEmbed}}" data-affiliation="{{affiliation}}" data-img="{{profile}}">
+            <button
               aria-label="Twitter page of {{name}}"
               class="t-image-link"
-              href="{{twitter}}"
+              {{!-- href="{{twitter}}" --}}
             >
-              <img class="t-image" src="{{profile}}" loading="lazy" alt="" />
+              <img class="t-image" src="{{profile}}" width="3em" height="3em" loading="lazy" alt="" />
               <h2 class="t-name">
                 {{name}}
               </h2>
@@ -139,10 +139,12 @@
               <p>
                 {{handle}}
               </p>
-            </a>
+            </button>
           </li>
         {{/each}}
       </ul>
     </main>
+    <!-- inject:js -->
+    <!-- endinject -->
   </body>
 </html>
