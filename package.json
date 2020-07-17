@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "inject": "gulp inject",
-    "build": "npm run start && npm run inject"
+    "build": "rm ./twitterdex/js/* ./twitterdex/css/* && gulp css js && npm run inject"
   },
   "keywords": [
     "history",
