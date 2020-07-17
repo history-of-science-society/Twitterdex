@@ -19,7 +19,7 @@
   "author": "Ryan Feigenbaum",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.10.4",
+    "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
@@ -36,6 +36,7 @@
     "dotenv": "^8.2.0",
     "handlebars": "^4.7.6",
     "node-fetch": "^2.6.0",
+    "npm-check-updates": "^7.0.2",
     "twit": "^2.2.11"
   }
 }
