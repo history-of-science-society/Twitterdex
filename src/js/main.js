@@ -1,74 +1,107 @@
-// Filter DIVS based on text
-// const numTwitter = document.querySelectorAll(".t-entry");
-// const searchBox = document.querySelector(".t-search-box");
-// const searchResults = document.getElementById("t-search-results");
-
-// searchBox.addEventListener("keyup", () => {
-//   if (searchBox.value.length > 2) {
-//     divFilter(searchBox.value);
-//     let results = document.querySelectorAll(".t-match").length;
-//     searchResults.textContent = `Results: ${results.toString()}`;
-//   } else {
-//     numTwitter.forEach((el) => el.classList.remove("t-no-match"));
-//     searchResults.textContent = "";
-//   }
-// });
-
-// function divFilter(input) {
-//   numTwitter.forEach((el) => {
-//     let escInput = escapeRegExp(input);
-//     let userInput = RegExp(escInput.toLowerCase());
-//     let src = el.querySelector(".t-name").innerText.toLowerCase();
-//     let bios = el.querySelector(".t-bio").innerText.toLowerCase();
-//     if (userInput.test(src) || userInput.test(bios)) {
-//       el.classList.add("t-match");
-//       el.classList.remove("t-no-match");
-//     } else {
-//       el.classList.add("t-no-match");
-//       el.classList.remove("t-match");
-//     }
-//   });
-// }
-
 // Escape special characters on user input
 function escapeRegExp(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 }
 
-// Open and close button for cards
-const aboutButtons = document.querySelectorAll(".t-about");
-const closeBioButtons = document.querySelectorAll(".t-bio-close");
-// const tweetButtons = document.querySelectorAll('.t-latest');
+// Search functionality
 
-aboutButtons.forEach((el) => {
-  el.addEventListener("click", (e) => {
-    e.target.parentNode.nextSibling.nextSibling.classList.remove("t-card-hide");
-    e.target.parentNode.nextSibling.nextSibling.classList.add("t-card-show");
-    e.target.parentNode.style.display = "none";
-    e.target.parentNode.previousElementSibling.style.display = "none";
-  });
+// DOM Elements
+const ul = document.querySelector(".t-main");
+const twitterstorians = ul.querySelectorAll("li");
+const searchInput = document.getElementById("search");
+const resultNum = document.getElementById("results");
+
+// Return result number
+const parseResult = (num) => {
+  if (num === 1) {
+    return num + " Result";
+  }
+  return num + " Results";
+};
+
+// Create a text blob to search through
+const searchIndex = Array.from(twitterstorians).map((el) => {
+  const id = el.id;
+  const text =
+    id +
+    " " +
+    el.dataset.name +
+    " " +
+    el.dataset.bio +
+    " " +
+    el.dataset.affiliation +
+    " " +
+    el.dataset.tweet;
+  const lowerCaseText = text.toLowerCase();
+  return { id, text: lowerCaseText };
 });
 
-// tweetButtons.forEach(el => {
-//     el.addEventListener('click', e => {
-//         e.target.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.classList.remove('t-card-hide');
-//         e.target.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.classList.add('t-card-show');
-//         e.target.parentNode.style.display = "none";
-//         e.target.parentNode.previousElementSibling.style.display = "none";
-//     })
-// });
+const clearNoResultsDiv = () => {
+  const noResults = document.getElementById("no-results");
+  if (noResults) noResults.parentNode.removeChild(noResults);
+};
 
-closeBioButtons.forEach((el) => {
-  el.addEventListener("click", (e) => {
-    e.target.parentNode.classList.remove("t-card-show");
-    e.target.parentNode.classList.add("t-card-hide");
-    e.target.parentNode.parentNode.children[1].style.display = "flex";
-    e.target.parentNode.parentNode.children[2].style.display = "flex";
-  });
-});
+const reset = () => {
+  twitterstorians.forEach((el) => (el.style.display = "flex"));
+  clearNoResultsDiv();
+  resultNum.textContent = parseResult(twitterstorians.length);
+};
+
+const search = (e) => {
+  // reset on backspace
+  if (e.key === "Backspace" || e.code === "Backspace") {
+    reset();
+    //   return;
+  }
+
+  // If there are results, remove the "no results" div
+  clearNoResultsDiv();
+
+  // Prepare search value
+  const searchValue = escapeRegExp(
+    searchInput.value.toString().trim().toLowerCase()
+  );
+
+  // Reset if value is less than 2
+  if (searchValue.length < 2) {
+    reset();
+  } else {
+    // Begin search
+    const searchRegEx = RegExp(searchValue);
+    const searchResults = searchIndex
+      .filter((el) => searchRegEx.test(el.text))
+      .map((el) => el.id);
+    // If results are returned
+    if (searchResults.length) {
+      resultNum.textContent = parseResult(searchResults.length);
+      // Update display to match results
+      twitterstorians.forEach((el) => {
+        if (!searchResults.includes(el.id)) {
+          el.style.display = "none";
+        }
+      });
+      // Hide everything if no results are returned
+    } else {
+      twitterstorians.forEach((el) => {
+        el.style.display = "none";
+      });
+      // If there are no results, add element
+      if (!document.getElementById("no-results")) {
+        resultNum.textContent = parseResult(0);
+        const noResults = document.createElement("li");
+        noResults.id = "no-results";
+        noResults.classList.add("t-entry");
+        noResults.textContent = "Nothing found! Try again";
+        ul.append(noResults);
+      }
+    }
+  }
+};
+
+// Add event listener
+searchInput.addEventListener("keyup", search);
 
 // Modal Creation
-const ul = document.querySelector(".t-main");
 
 ul.addEventListener("click", (e) => {
   if (e.target.tagName === "UL") {
@@ -100,7 +133,8 @@ ul.addEventListener("click", (e) => {
 
   let div = document.createElement("div");
   const btn = document.createElement("button");
-  btn.textContent = "Close";
+  btn.innerHTML =
+    '<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="Close" stroke="#ffffff" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#ffffff"> <title id="cancelIconTitle">Cancel</title> <path d="M15.5355339 15.5355339L8.46446609 8.46446609M15.5355339 8.46446609L8.46446609 15.5355339"/> <path d="M4.92893219,19.0710678 C1.02368927,15.1658249 1.02368927,8.83417511 4.92893219,4.92893219 C8.83417511,1.02368927 15.1658249,1.02368927 19.0710678,4.92893219 C22.9763107,8.83417511 22.9763107,15.1658249 19.0710678,19.0710678 C15.1658249,22.9763107 8.83417511,22.9763107 4.92893219,19.0710678 Z"/> </svg>';
   btn.classList.add("close-modal-btn");
 
   btn.addEventListener("click", (e) => {

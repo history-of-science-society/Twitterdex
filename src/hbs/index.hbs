@@ -123,6 +123,13 @@
             of Science Twitterstorians
         </p>
       </header>
+      <div class="search" role="search">
+        <header>
+        <label for="search">Search</label>
+        <p id="results">{{total}} Results</p>
+        </header>
+        <input id="search" type="text" placeholder="Type to search..."/>
+      </div>
       <ul class="t-main">
         {{#each authors}}
           <li id="{{handleRaw}}" class="t-entry" data-name="{{name}}" data-bio="{{bio}}" data-tweet="{{htmlEmbed}}" data-affiliation="{{affiliation}}" data-img="{{profile}}">
