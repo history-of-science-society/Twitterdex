@@ -151,6 +151,53 @@
   }
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes come-in {
+  0% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes leave {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
 .t-modal {
   display: flex;
   position: fixed;
@@ -161,6 +208,7 @@
   align-items: center;
   top: 0;
   left: 0;
+  animation: fade-in 0.2s ease-in-out;
 
   &-item {
     max-width: 30rem;
@@ -170,6 +218,7 @@
     background: $gray-matter;
     border-radius: 8px;
     overflow: auto;
+    animation: come-in 0.3s ease-in-out;
   }
 
   &__header {
@@ -186,6 +235,17 @@
       margin-right: 0.5rem;
     }
   }
+}
+.leave {
+  animation: leave 0.3s ease-in-out;
+}
+
+.fade-in {
+  animation: fade-in 0.3s ease-in-out;
+}
+
+.fade-out {
+  animation: fade-out 0.3s ease-in-out;
 }
 
 .t-subheader {
