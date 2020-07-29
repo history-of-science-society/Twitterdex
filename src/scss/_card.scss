@@ -173,28 +173,21 @@
 
 @keyframes come-in {
   0% {
-    transform: scale(0);
+    opacity: 0;
   }
-  90% {
-    transform: scale(1.1);
-  }
+
   100% {
-    transform: scale(1);
+    opacity: 1;
   }
 }
 
 @keyframes leave {
   0% {
-    transform: scale(1);
+    opacity: 1;
   }
-  30% {
-    transform: scale(1.1);
-  }
-  70% {
-    transform: scale(0);
-  }
+
   100% {
-    transform: scale(0);
+    opacity: 0;
   }
 }
 
@@ -208,7 +201,7 @@
   align-items: center;
   top: 0;
   left: 0;
-  animation: fade-in 0.2s ease-in-out;
+  animation: fade-in 0.2s ease-in;
 
   &-item {
     max-width: 30rem;
@@ -218,7 +211,7 @@
     background: $gray-matter;
     border-radius: 8px;
     overflow: auto;
-    animation: come-in 0.3s ease-in-out;
+    animation: come-in 0.3s ease-in;
   }
 
   &__header {
@@ -237,15 +230,11 @@
   }
 }
 .leave {
-  animation: leave 0.3s ease-in-out;
-}
-
-.fade-in {
-  animation: fade-in 0.3s ease-in-out;
+  animation: leave 0.3s ease-out;
 }
 
 .fade-out {
-  animation: fade-out 0.3s ease-in-out;
+  animation: fade-out 0.3s ease-out;
 }
 
 .t-subheader {
