@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "dotenv": "^8.2.0",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "node-fetch": "^2.6.0",
     "npm-check-updates": "^7.0.2",
     "twit": "^2.2.11"
